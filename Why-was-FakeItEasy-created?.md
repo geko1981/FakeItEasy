@@ -1,12 +1,10 @@
-#summary Motivation for why FakeItEasy was created
-
-= Introduction =
+#Introduction
 
 There was a good question on Stack Overflow that asks what differs FakeItEasy from other frameworks. I answered the question there but I include a copy of the answer below.
 
-[http://stackoverflow.com/questions/4001101/are-fakes-better-than-mocks The question on Stack Overflow]
+[The question on Stack Overflow](http://stackoverflow.com/questions/4001101/are-fakes-better-than-mocks)
 
-= My answer =
+#My answer
 
 To be clear, I created FakeItEasy so I'll definitely not say whether one framework is better than the other, what I can do is point out some differences and motivate why I created FakeItEasy. Functionally there are no major differences between Moq and FakeItEasy.
 
