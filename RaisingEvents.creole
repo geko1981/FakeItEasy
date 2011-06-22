@@ -1,6 +1,4 @@
-#summary How to raise an event on a faked object.
-
-= Introduction =
+= How to raise an event on a faked object =
 
 In this section it is described how to raise events on fake objects.
 
