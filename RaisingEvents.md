@@ -1,0 +1,38 @@
+#summary How to raise an event on a faked object.
+
+= Introduction =
+
+In this section it is described how to raise events on fake objects.
+
+
+= Details =
+
+Let's say - for arguments sake - that we have an interface that has an event defined:
+
+{{{
+public interface IRobot
+{ 
+    event EventHandler FellInLove;
+}
+}}}
+
+Now in a test where we have a faked instance of this interface we can raise that event whenever we want specifying sender and event args. We could also emit the sender and the fake will be passed as sender to the event handler. There's also a convenience method for raising with empty event args.
+
+{{{
+var robot = A.Fake<IRobot>();
+            
+robot.FellInLove += (s, e) =>
+    {
+        Console.WriteLine("Yay!");
+    };
+            
+            
+// Raise the event!
+robot.FellInLove += Raise.With(EventArgs.Empty).Now;
+
+// Use the overload for empty event args
+robot.FellInLove += Raise.WithEmpty().Now;
+
+// Specify sender explicitly:
+robot.FellInLove += Raise.With(sender: robot, e: EventArgs.Empty).Now;
+}}}
