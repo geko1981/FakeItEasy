@@ -1,6 +1,4 @@
-#summary On how to create strict mocks in FakeItEasy.
-
-= Details =
+= Strict mocks =
 
 {{{
 var foo = A.Fake<IFoo>(x => x.Strict());
