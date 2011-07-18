@@ -1,5 +1,3 @@
-#Ordered assertions
-
 Assertion uses the exact same syntax as configuration to specify what call to assert on, then followed by the "MustHaveHappened"-method which takes a specification of the expected repeat in the form of a "Repeat"-object.
 
 Two extension methods are provided for convenience, "MustHaveHappened" that takes no argument and "MustNotHaveHappened" that asserts that the specified call has not happened at all.
