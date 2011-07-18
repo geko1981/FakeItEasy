@@ -1,5 +1,3 @@
-#Introduction
-
 The concept of ordered assertions is somewhat complex and nothing that should be used frequently but there are times when it's really needed.
 
 In FakeItEasy you can assert that calls happened in a specific order on _more than one_ fake object.
