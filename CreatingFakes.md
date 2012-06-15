@@ -8,7 +8,7 @@ The common way to create a fake object is by using the A.Fake-syntax, for exampl
 This will return a faked object that is an actual instance of the type specified (IFoo in this case).
 
 ##Options
-When creating fakes you can through a fluent interface specify options for how the fake should be created.
+When creating fakes you can, through a fluent interface, specify options for how the fake should be created.
 
 * Specify arguments for the constructor of the faked type.
 * Specify additional interfaces that the fake should implement.
