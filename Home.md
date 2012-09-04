@@ -72,7 +72,7 @@ In order to pass arguments to the constructor of fakes of classes you'd use a la
 
     var foo = A.Fake<Foo>(() => new Foo("string passed to constructor"));
 
-**Faking an interface and assigning additional custom attributes to the faked class.
+**Faking an interface and assigning additional custom attributes to the faked class.**
 
     //Get Constructor for our attribute with no parameters
     var constructor = typeof(FooAttribute).GetConstructor(new Type[0]);
