@@ -68,6 +68,7 @@ Or you can create a fake object, that is a wrapper around the faked object, this
     A.CallTo(() => foo.Bar()).MustHaveHappened(Repeated.Exactly.Twice);
 
 **Faking a class that takes arguments to constructor, no untyped object array, safe for refactoring:**
+
 In order to pass arguments to the constructor of fakes of classes you'd use a lambda expression rather than the common method of passing object arrays representing the arguments. The expression will actually never be invoked so the constructor call in the following example will not be invoked but the arguments will be extracted from it.
 
     var foo = A.Fake<Foo>(() => new Foo("string passed to constructor"));
@@ -104,7 +105,7 @@ In order to pass arguments to the constructor of fakes of classes you'd use a la
     NextCall.To(foo).WithAnyArguments().MustHaveHappened()
     foo.Bar(null, null)
 
-In .Net 4 VB supports lambda-subs as well:
+**In .Net 4 VB supports lambda-subs as well:**
 
     A.CallTo(Sub() foo.Bar(A<object>.Ignored, A<object>.Ignored)).MustHaveHappened()
 
