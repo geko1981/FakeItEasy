@@ -14,9 +14,9 @@ I used Rhino Mocks before and I quite liked it, especially after the AAA-syntax 
 
 As has been mentioned here one of the main differences is in the terminology, FakeItEasy was first created to introduce TDD and mocking to beginners and having to worry about the differences between mocks and stubs up front is not very useful.
 
-I've put a lot of focus into the exception messages, it should be very easy to tell what whent wrong in a test just looking at an exception message.
+I've put a lot of focus into the exception messages, it should be very easy to tell what went wrong in a test just looking at an exception message.
 
-FakeItEasy has som extensibility features that the other frameworks doesn't have but these aren't very well documented yet.
+FakeItEasy has some extensibility features that the other frameworks don't have but these aren't very well documented yet.
 
 FakeItEasy is (hopefully) a little stronger in mocking classes that has constructor arguments since it has a mechanism for resolving dummy-values to use. You can even specify your own dummy value definitions by implementing a DummyDefinition(Of T) class within your test project, this will automatically be picked up by FakeItEasy.
 
