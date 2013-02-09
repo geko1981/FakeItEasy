@@ -1,9 +1,8 @@
-* [[A-guide-for-faking-internal-(Friend)-types.]]
-* [[ArgumentConstraints]]
+* [How to fake internal (Friend in VB) types](A-guide-for-faking-internal-%28Friend%29-types.)
+* [Argument constraints](ArgumentConstraints)
 * [[Assertion]]
-* [[CreatingFakes]]
-* [[Home]]
+* [Creating fakes](CreatingFakes)
 * [[Ordered assertions]]
-* [[RaisingEvents]]
-* [[StrictMocks]]
+* [Raising events](RaisingEvents)
+* [Strict mocks](StrictMocks)
 * [[Why was FakeItEasy created?]]
