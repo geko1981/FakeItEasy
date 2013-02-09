@@ -1,3 +1,4 @@
+[[_TOC_]]
 ![Are you mocking me?](http://lh5.ggpht.com/_iTnDnty4mRk/TFsS15Nuu7I/AAAAAAAAANM/EuX4rAhiF0s/FakingMock.png)
 
 ##It's faking amazing!
