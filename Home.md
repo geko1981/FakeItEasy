@@ -1,4 +1,4 @@
-* [How to fake internal (Friend in VB) types](A-guide-for-faking-internal-%28Friend%29-types.)
+* [How to fake internal (Friend in VB) types](How to fake internal types)
 * [Argument constraints](ArgumentConstraints)
 * [[Assertion]]
 * [Creating fakes](CreatingFakes)
