@@ -1,8 +1,8 @@
-* [How to fake internal (Friend in VB) types](How to fake internal types)
+* [How to fake internal (Friend in VB) types](How-to-fake-internal-types)
 * [Argument constraints](ArgumentConstraints)
-* [[Assertion]]
+* [Assertion](Assertion)
 * [Creating fakes](CreatingFakes)
-* [[Ordered assertions]]
+* [Ordered assertions](Ordered-assertions)
 * [Raising events](RaisingEvents)
 * [Strict mocks](StrictMocks)
-* [[Why was FakeItEasy created?]]
+* [Why was FakeItEasy created?](Why-was-FakeItEasy-created%3F)
