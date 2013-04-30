@@ -8,3 +8,4 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [Raising events](wiki/RaisingEvents)
 * [Strict mocks](wiki/StrictMocks)
 * [Why was FakeItEasy created?](wiki/Why-was-FakeItEasy-created%3F)
+* [Mocking HttpContext with FakeItEasy](http://blog.jonathanchannon.com/2013/04/30/mocking-httpcontext-with-fake-it-easy/)
