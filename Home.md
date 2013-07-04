@@ -1,5 +1,6 @@
 There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to ask questions about FakeItEasy and its usage
 
+* [Faking Async Methods](wiki/Faking-Async-Methods)
 * [How to fake internal (Friend in VB) types](wiki/How-to-fake-internal-types)
 * [Argument constraints](wiki/ArgumentConstraints)
 * [Assertion](wiki/Assertion)
