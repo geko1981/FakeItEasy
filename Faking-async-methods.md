@@ -17,7 +17,7 @@ var foo = A.Fake<Foo>();
 var bar = await foo.Bar(); // will return immediately and return null (default(string))
 ```
 
-Of course, you can still configure calls to `async` method as you would normally:
+Of course, you can still configure calls to `async` methods as you would normally:
 
 ```C#
 A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar));
