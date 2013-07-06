@@ -20,7 +20,7 @@ var bar = await foo.Bar(); // will return immediately and return null (default(s
 Of course, you can still configure calls to `async` methods as you would normally:
 
 ```C#
-A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar));
+A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar"));
 ```
 
 \* In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and the `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
