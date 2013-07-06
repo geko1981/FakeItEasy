@@ -23,4 +23,4 @@ Of course, you can still configure calls to `async` method as you would normally
 A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar));
 ```
 
-* This did *not* work before FakeItEasy 1.13. The task would return uncompleted and as a result the `await` would never be satisified. If you are using 1.12 or older, [upgrade now](https://nuget.org/packages/FakeItEasy/).
+*This did *not* work before FakeItEasy 1.13. The task would return uncompleted and as a result the `await` would never be satisified. If you are using 1.12 or older, [upgrade now](https://nuget.org/packages/FakeItEasy/).
