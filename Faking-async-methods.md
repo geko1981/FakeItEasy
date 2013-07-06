@@ -14,7 +14,7 @@ A call to an non-configured method on a fake will return a `Task` or `Task<T>` w
 
 ```C#
 var foo = A.Fake<Foo>();
-var bar = await foo.Bar(); // will return immediately and return `null` (`default(string)`)
+var bar = await foo.Bar(); // will return immediately and return null (default(string))
 ```
 Note that this did *not* work before FakeItEasy 1.13. The task would return uncompleted and as a result the `await` would never be satisified. If you are using 1.12 or older, [upgrade now](https://nuget.org/packages/FakeItEasy/).
 
