@@ -14,7 +14,7 @@ public interface IRobot
 }
 ```
 
-Now in a test where we have a faked instance of this interface we can raise that event whenever we want specifying sender and event args. We could also emit the sender and the fake will be passed as sender to the event handler. There's also a convenience method for raising with empty event args.
+Now in a test where we have a faked instance of this interface we can raise that event whenever we want specifying sender and event args. We could also omit the sender and the fake will be passed as sender to the event handler. There's also a convenience method for raising with empty event args.
 
 ```
 var robot = A.Fake<IRobot>();
