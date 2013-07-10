@@ -1,5 +1,3 @@
-#Creating fake objects
-
 ##Natural fakes
 The common way to create a fake object is by using the A.Fake-syntax, for example:
 
