@@ -6,7 +6,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Assertion]]
 * [[Creating fakes]]
 * [[Ordered assertions]]
-* [[Raising events]](wiki/RaisingEvents)
+* [[Raising events]]
 * [[Strict mocks]]
 * [[Formatting Argument Values]]
 * [[Why was FakeItEasy created?]]
