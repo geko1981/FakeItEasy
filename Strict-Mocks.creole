@@ -1,5 +1,3 @@
-= Strict mocks =
-
 {{{
 var foo = A.Fake<IFoo>(x => x.Strict());
 }}}
