@@ -1,5 +1,3 @@
-#Argument Constraints
-
 When configuring and asserting calls in FakeItEasy, the arguments of the call can be constrained so that only calls to the configured method where the arguments matches the constraint are selected.
 
 
