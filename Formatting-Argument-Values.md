@@ -1,4 +1,4 @@
-FakeItEasy tries to provide helpful error messages when an expected call to a fake method isn't made, or when an unexpected call is made. Often these messages are adequate, but sometimes there's a need to improve upon them.
+FakeItEasy tries to provide helpful error messages when an [[Assertion]] isn't met. For example, when an expected call to a fake method isn't made, or when an unexpected call _is_ made. Often these messages are adequate, but sometimes there's a need to improve upon them.
 
 ## Out of the box experience
 Suppose we have a `Book` class, whose instances we keep in some class that implements `ILibrary`:
