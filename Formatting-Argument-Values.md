@@ -4,15 +4,15 @@ FakeItEasy tries to provide helpful error messages when an [[Assertion]] isn't m
 Suppose we have a `Book` class, whose instances we keep in some class that implements `ILibrary`:
 ```C#
 public class Book
- {
-     public string Title { get; set; }
-     public DateTime PublishedOn { get; set; }
- }
+{
+    public string Title { get; set; }
+    public DateTime PublishedOn { get; set; }
+}
 
- public interface ILibrary
- {
-     bool Checkout(Book book);
- }
+public interface ILibrary
+{
+    bool Checkout(Book book);
+}
 ```
 
 Let's write a test that shows what happens when a method call that we didn't want to occur does:
