@@ -44,11 +44,12 @@ The message gives a good amount of information. (There's also a stack trace, omi
 However, it's possible to improve on the error message that FakeItEasy emits. Just define a class that implements `FakeItEasy.IArgumentValueFormatter` and include it in your test project, another assembly in the AppDomain, or even an assembly in the test project's working directory. FakeItEasy will find the class and use it when it formats the error message.  
 `IArgumentValueFormatter` has this signature:
 ```C#
-    public interface IArgumentValueFormatter
-    {
-        Type ForType { get; }
-        int Priority { get; }
-        string GetArgumentValueAsString(object argumentValue);
+public interface IArgumentValueFormatter
+{
+    Type ForType { get; }
+    int Priority { get; }
+    string GetArgumentValueAsString(object argumentValue);
+}
 ```
 `GetArgumentValueAsString` does the work, transforming an argument into its formatted representation.   `ForType` indicates what type of argument a formatter can format.  
 `Priority` is discussed below.
