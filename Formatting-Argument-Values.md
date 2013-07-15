@@ -87,7 +87,7 @@ Earlier we said that FakeItEasy uses `ToString` to format an argument value. Tha
 - other `string` values are formatted as `"the string value"`, including the quotation marks, and
 - any other value is formatted as its `ToString()` result
 
-There is no way to change FakeItEasy's behaviour when formatting `null`, but the other behaviour can be overridden using user-defined.
+There is no way to change FakeItEasy's behaviour when formatting `null`, but the other behaviour can be overridden using user-defined formatters.
 
 ## Resolving formatter collisions
 It's possible for a solution to contain multiple formatters that would apply to the same types of arguments. In fact, it's guaranteed to happen, since FakeItEasy itself defines a formatter that applies to `object`s and one that applies to `string`s. Any user-defined formatter will conflict with at least the built-in object formatter, and maybe others. When there is more than one candidate for formatting an argument, FakeItEasy picks the best one based on two factors:
