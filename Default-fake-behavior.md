@@ -1,6 +1,6 @@
-Fake objects come with useful default behavior, even before they're configured. Knowing the default behavior can make the fakes easier to work with and can lead to more concise tests.
+Fake objects come with useful default behavior as soon as [[they are created|Creating Fakes]]. Knowing the default behavior can make the fakes easier to work with and can lead to more concise tests.
 
-## Non-overideable members members cannot be faked
+## Non-overideable members cannot be faked
 
 Methods and properties can only be faked if they are declared on a faked interface, or are declared abstract or virtual on a faked class. If none of these conditions hold, then a member cannot be faked, just as it could not be overridden in a derived class.
 
