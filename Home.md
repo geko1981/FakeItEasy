@@ -5,6 +5,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Argument constraints]]
 * [[Assertion]]
 * [[Creating fakes]]
+* [[Default fake behavior]]
 * [[Ordered assertions]]
 * [[Raising events]]
 * [[Strict mocks]]
