@@ -14,7 +14,7 @@ A call to an non-configured method on a fake will return a `Task` or `Task<T>` w
 
 ```C#
 var foo = A.Fake<Foo>();
-var bar = await foo.Bar(); // will return immediately and return ""
+var bar = await foo.Bar(); // will return immediately and return string.Empty
 ```
 
 Of course, you can still configure calls to `async` methods as you would normally:
