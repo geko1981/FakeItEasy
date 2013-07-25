@@ -8,9 +8,10 @@ When such a member is invoked on the fake, the original behavior will be invoked
 
 ## Overrideable members are faked
 
-When a method or property is declared on a faked interface, or is declared as abstract or virtual on a faked class, and the member is invoked on the fake, no action will be taken by the fake. It is as if the body of the member were empty. If the member has a return type (or is a get property), the default return value will depend on the type `T` of the member:
+When a method or property is declared on a faked interface, or is declared as abstract or virtual on a faked class, and the member is invoked on the fake, no action will be taken by the fake. It is as if the body of the member were empty. If the member has a return type (or is a get property), the default return value will depend on the type `T` of the member. *The actual rules for generating the return values are quite complicated*, but here are some sample behaviours:
 
 * if `T` is `string`, then `string.Empty` will be returned
+* if `T` is a `Task<TResult>`, then a `Task<TResult>` will be returned. Its `Result` property will return a value generated according its type. For example, a `Task<string>`'s `Result` property would return `string.Empty`
 * if `T` is not fakeable, then `default(T)` will be returned
 * if `T` is fakeable, then a **fake T** will be returned. This behavior is sometimes called *recursive fakes*
 
