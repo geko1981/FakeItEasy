@@ -1,5 +1,3 @@
-#How to fake internal (Friend in VB) types.
-
 This guide will show you how to set up your project in order to be able to fake internal types in your tested system.
 
 #Details
