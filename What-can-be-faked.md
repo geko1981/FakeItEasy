@@ -9,7 +9,7 @@ This means that the following entities can be faked:
     * are not static, and
     * have at least one public or protected constructor whose arguments FakeItEasy can construct or obtain
 
-Note that special steps will need to be taken to [[fake internal interfaces and classes|How to fake internal types]].
+Note that special steps will need to be taken to [[fake internal interfaces and classes|How to fake internal (Friend in VB) types]].
 
 ### Where do the constructor arguments come from?
 
