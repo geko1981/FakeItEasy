@@ -3,7 +3,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Creating fakes]]
     * [[What can be faked]]
     * [[Default fake behavior]]
-    * [[How to fake internal (Friend in VB) types|How to fake internal types]]
+    * [[How to fake internal (Friend in VB) types]]
 * [[Argument constraints]]
 * [[Assertion]]
     * [[Ordered assertions]]
