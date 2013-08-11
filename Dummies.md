@@ -35,7 +35,7 @@ When FakeItEasy needs to access a Dummy of type `T`, it tries a number of approa
 1. see if there's a custom Dummy definition for `T` (more on this below)
 1. if `T` is `Task`, the returned Dummy will be an actual `Task`
 1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` whose `Result` property returns a Dummy
-1. if `T` is fakeable, the Dummy will be a Fake `T`
+1. if `T` is [[fakeable|What can be faked]], the Dummy will be a Fake `T`
 1. if `T` is a value type, the Dummy will be a `T` created via `Activator.CreateInstance`
 1. if nothing above matched, then `T` is a class. Loop over all its constructors in _descending order of argument list length_.  
 For each constructor, attempt to get Dummies to satisfy the argument list. If the Dummies can be found, use `Activator.CreateInstance` to create the Dummy, supplying the Dummies argument list. If the argument list can't be satisfied, then try the next constructor.
