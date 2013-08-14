@@ -33,8 +33,8 @@ When [[Creating Fakes]] or Dummies of class types, FakeItEasy needs to invoke th
 When FakeItEasy needs to access a Dummy of type `T`, it tries a number of approaches in turn, until one succeeds:
 
 1. see if there's a custom Dummy definition for `T` (more on this below)
-1. if `T` is `Task`, the returned Dummy will be an actual `Task` that completes immediately
-1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` that completes immediately. Its `Result` property returns a Dummy
+1. if `T` is `Task`, the returned Dummy will be an actual `Task` that completes immediately<sup>1</sup>
+1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` that completes immediately<sup>1</sup>. Its `Result` property returns a Dummy
 1. if `T` is [[fakeable|What can be faked]], the Dummy will be a Fake `T`
 1. if `T` is a value type, the Dummy will be a `T` created via `Activator.CreateInstance`
 1. if nothing above matched, then `T` is a class. Loop over all its constructors in _descending order of argument list length_.  
@@ -72,3 +72,6 @@ public interface IDummyDefinition
 When FakeItEasy tries to create a Dummy, it looks at all known `IDummyDefinition` implementations and if one of them has a `ForType` that matches the desired type, `CreateDummy` is used.
 
 Although it's possible to implement `IDummyDefinition` explicitly, the preferred approach is to extend `abstract class DummyDefinition<T>: IDummyDefinition`, where `T` is the type of dummy to produce, as in the example above. `DummyDefinition<T>` implements `ForType` (returning `T`), so all that's needed is to implement the abstract `CreateDummy` method, having it return the Dummy.
+
+----
+1. In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and (for example) an `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
