@@ -33,8 +33,8 @@ When [[Creating Fakes]] or Dummies of class types, FakeItEasy needs to invoke th
 When FakeItEasy needs to access a Dummy of type `T`, it tries a number of approaches in turn, until one succeeds:
 
 1. see if there's a custom Dummy definition for `T` (more on this below)
-1. if `T` is `Task`, the returned Dummy will be an actual `Task`
-1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` whose `Result` property returns a Dummy
+1. if `T` is `Task`, the returned Dummy will be an actual `Task` that completes immediately
+1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` that completes immediately. Its `Result` property returns a Dummy
 1. if `T` is [[fakeable|What can be faked]], the Dummy will be a Fake `T`
 1. if `T` is a value type, the Dummy will be a `T` created via `Activator.CreateInstance`
 1. if nothing above matched, then `T` is a class. Loop over all its constructors in _descending order of argument list length_.  
