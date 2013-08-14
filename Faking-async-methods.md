@@ -24,4 +24,4 @@ A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar"));
 ```
 
 ----
-<sup>1</sup> In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and the `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
+1. In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and the `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
