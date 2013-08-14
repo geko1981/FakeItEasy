@@ -10,7 +10,7 @@ public class Foo
 }
 ```
 
-A call to an non-configured method on a fake will return a `Task` or `Task<T>` which completes immediately*, the latter supplying the default value of `T`:
+A call to a non-configured method on a fake will return a `Task` or `Task<T>` which completes immediately<sup>1</sup>, the latter supplying a [[Dummy|Dummies#how-are-the-dummies-made]] of type `T`:
 
 ```C#
 var foo = A.Fake<Foo>();
@@ -23,4 +23,4 @@ Of course, you can still configure calls to `async` methods as you would normall
 A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar"));
 ```
 
-\* In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and the `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
+<sup>1</sup> In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and the `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
