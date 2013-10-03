@@ -12,4 +12,4 @@ After you have configured your fake in this fashion you can configure any "allow
 A.CallTo(() => foo.Bar()).Returns("bar");
 ```
 
-Strict mocks are useful when it is important to ensure that no calls are made to your fake other than the ones you are expecting.
+Strict fakes are useful when it is important to ensure that no calls are made to your fake other than the ones you are expecting.
