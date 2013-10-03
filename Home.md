@@ -9,7 +9,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
     * [[Ordered assertions]]
 * [[Faking async methods]]
 * [[Raising events]]
-* [[Strict mocks]]
+* [[Strict fakes]]
 * [[Dummies]]
 * [[Formatting Argument Values]]
 * [[Why was FakeItEasy created?]]
