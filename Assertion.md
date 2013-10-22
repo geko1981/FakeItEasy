@@ -9,7 +9,7 @@ Arguments are constrained using [[Argument Constraints]] just like when configur
 #Details
 ##Syntax
 
-```C#
+```csharp
 // Asserting that a call has happened at least once.
 // The following two lines are equivalent.
 A.CallTo(() => foo.Bar()).MustHaveHappened(Repeated.AtLeast.Once);    // or
@@ -26,7 +26,7 @@ A.CallTo(() => foo.Bar()).MustHaveHappened(Repeated.Never);
 
 #Specifying Repeat
 
-```C#
+```csharp
 // Using the Repeated class:
 Repeated.AtLeast.Once // The call must have happened once or more.
 Repeated.Exactly.Once // The call must have happened exaclty one time
