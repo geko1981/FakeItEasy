@@ -1,8 +1,8 @@
-Assertion uses the exact same syntax as configuration to specify what call to assert on, then followed by the `MustHaveHappened` method which takes a specification of the expected repeat in the form of a `Repeat` object.
+Assertion uses exactly the same syntax as configuration to specify the call to be asserted, followed by `.MustHaveHappened(Repeated)` where `Repeated` specifies the number of expected repetitions.
 
-Two addtitional extension methods are provided for convenience:
-* `MustHaveHappened`, which takes no arguments and does not care about the number of times a call was made, and 
-* `MustNotHaveHappened` that asserts that the specified call has not happened at all.
+Two extension methods are provided for convenience:
+* `MustHaveHappened()` (no arguments) ignores the number of times the call was made, and 
+* `MustNotHaveHappened()` asserts that the specified call did not happen at all.
 
 Arguments are constrained using [[Argument Constraints]] just like when configuring calls.
 
