@@ -1,8 +1,8 @@
-FakeItEasy tries to provide helpful error messages when an [[Assertion]] isn't met. For example, when an expected call to a fake method isn't made, or when an unexpected call _is_ made. Often these messages are adequate, but sometimes there's a need to improve upon them, which can be done by writing a custom argument value formatters
+FakeItEasy tries to provide helpful error messages when an [[Assertion]] isn't met. For example, when an expected call to a fake method isn't made, or when an unexpected call _is_ made. Often these messages are adequate, but sometimes there's a need to improve upon them, which can be done by writing custom argument value formatters.
 
 ## Writing a custom argument value formatter
 Just define a class that extends `FakeItEasy.ArgumentValueFormatter<T>` and include it in your test project, another assembly in the AppDomain, or even an assembly in the test project's working directory. FakeItEasy will find the class and use it when it formats the error message. Here's a sample that formats argument values of type `Book`:
-```C#
+```csharp
 class BookArgumentValueFormatter : ArgumentValueFormatter<Book>
 {
     protected override string GetStringValue(Book argumentValue)
@@ -36,7 +36,7 @@ In the original form of the message, the Book argument is just formatted using `
 
 On startup, FakeItEasy searches its own assembly, assemblies in the current AppDomain, and assemblies in the process's current directory for classes that implement `FakeItEasy.IArgumentValueFormatter`. Any such classes found will be used when formatting argument values in error messages.  
 `IArgumentValueFormatter` has this signature:
-```C#
+```csharp
 public interface IArgumentValueFormatter
 {
     string GetArgumentValueAsString(object argumentValue);
@@ -72,9 +72,10 @@ It's possible for a solution to contain multiple formatters that would apply to 
 ### Lowest distance
 When an argument value needs to be formatted, FakeItEasy examines all known formatters whose ForType is in ArgType's inheritance tree, or whose ForType is an interface that ArgType implements. The _distance_ between ForType and ArgType is calculated as follows:
 
-- 0 if the ForType and ArgType are the same **or** if ForType is an interface that ArgType implements
-- 1 if `ForType == ArgType.BaseType`, 
-- 2 if `ForType == ArgType.BaseType.BaseType`, and so on, adding one for every step in the inheritance chain
+- 0 if ForType and ArgType are the same
+- 1 if ForType is an interface that ArgType implements<sup>1</sup>
+- 2 if `ForType == ArgType.BaseType`, 
+- 3 if `ForType == ArgType.BaseType.BaseType`, and so on, adding one for every step in the inheritance chain
 
 The the formatter whose ForType has the smallest distance to ArgType is used to format the argument.
 
@@ -84,3 +85,6 @@ Sometimes more than one formatter is found the same distance from ArgType. Maybe
 When multiple formatters have the same distance from the argument, FakeItEasy will select the one with the highest `Priority` property value. If multiple formatters have the same distance _and_ the same priority, the behavior is undefined.
 
 The formatters that FakeItEasy includes have `Priority` equal to `int.MinValue`, as do all classes that extend `ArgumentValueFormatter<T>`, unless they explicitly override the property. So, for example, a user-provided alternate formatter for `string`s should override `Priority`, having it return a higher value. Otherwise, there's no guarantee which formatter will be used.
+
+----
+1. In FakeItEasy 1.13.1 and earlier, the distance `0` was returned if the ForType and ArgType were the same **or** if ForType was an interface that ArgType implements, so if there were two formatters, each matching one of those conditions, there was no way to tell which one would be used. This was fixed in [Issue 142](../issues/142).
