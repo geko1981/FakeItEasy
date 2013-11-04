@@ -8,65 +8,69 @@ Note that this feature is not available in the 1.0.* versions.
 
 One area where ordered asserts are useful is when you need to test that a call to a fake has happened between two other calls creating a scope. This could be useful when dealing with transactions or units of work.
 
-    public interface IUnitOfWorkFactory
+```csharp
+public interface IUnitOfWorkFactory
+{
+    IDisposable BeginWork();
+}
+
+public interface IDoSomethingPrettyUseful
+{
+    void JustDoIt();
+}
+
+public class Worker
+{
+    private IUnitOfWorkFactory unitOfWorkFactory;
+    private IDoSomethingPrettyUseful usefulCollaborator;
+        
+    public Worker(IUnitOfWorkFactory unitOfWorkFactory, IDoSomethingPrettyUseful usefulCollaborator)
     {
-        IDisposable BeginWork();
+        this.unitOfWorkFactory = unitOfWorkFactory;
+        this.usefulCollaborator = usefulCollaborator;
     }
 
-    public interface IDoSomethingPrettyUseful
+    public void JustDoIt()
     {
-        void JustDoIt();
-    }
-
-    public class Worker
-    {
-        private IUnitOfWorkFactory unitOfWorkFactory;
-        private IDoSomethingPrettyUseful usefulCollaborator;
-            
-        public Worker(IUnitOfWorkFactory unitOfWorkFactory, IDoSomethingPrettyUseful usefulCollaborator)
+        using (this.unitOfWorkFactory.BeginWork())
         {
-            this.unitOfWorkFactory = unitOfWorkFactory;
-            this.usefulCollaborator = usefulCollaborator;
-        }
-    
-        public void JustDoIt()
-        {
-            using (this.unitOfWorkFactory.BeginWork())
-            {
-                this.usefulCollaborator.JustDoIt();
-            }
+            this.usefulCollaborator.JustDoIt();
         }
     }
+}
+```
 
 In the following example we'll assert that the call to "usefulCollaborator.JustDoIt()" happened between the calls to BeginWork and the Dispose method of the returned unit of work.
 
-    [Test]
-    public void Should_start_work_within_unit_of_work()
+```csharp
+[Test]
+public void Should_start_work_within_unit_of_work()
+{
+    // Arrange
+    var unitOfWork = A.Fake<IDisposable>();
+            
+    var unitOfWorkFactory = A.Fake<IUnitOfWorkFactory>();
+    A.CallTo(() => unitOfWorkFactory.BeginWork()).Returns(unitOfWork);
+
+    var usefulCollaborator = A.Fake<IDoSomethingPrettyUseful>();
+
+    var worker = new Worker(unitOfWorkFactory, usefulCollaborator);
+
+    using (var scope = Fake.CreateScope())
     {
-        // Arrange
-        var unitOfWork = A.Fake<IDisposable>();
-                
-        var unitOfWorkFactory = A.Fake<IUnitOfWorkFactory>();
-        A.CallTo(() => unitOfWorkFactory.BeginWork()).Returns(unitOfWork);
-    
-        var usefulCollaborator = A.Fake<IDoSomethingPrettyUseful>();
-    
-        var worker = new Worker(unitOfWorkFactory, usefulCollaborator);
-    
-        using (var scope = Fake.CreateScope())
+        // Act
+        worker.JustDoIt();
+
+        // Assert
+        using (scope.OrderedAssertions())
         {
-            // Act
-            worker.JustDoIt();
-    
-            // Assert
-            using (scope.OrderedAssertions())
-            {
-                A.CallTo(() => unitOfWorkFactory.BeginWork()).MustHaveHappened();
-                A.CallTo(() => usefulCollaborator.JustDoIt()).MustHaveHappened();
-                A.CallTo(() => unitOfWork.Dispose()).MustHaveHappened();
-            }
+            A.CallTo(() => unitOfWorkFactory.BeginWork()).MustHaveHappened();
+            A.CallTo(() => usefulCollaborator.JustDoIt()).MustHaveHappened();
+            A.CallTo(() => unitOfWork.Dispose()).MustHaveHappened();
         }
     }
+}
+```
 
 In the test we need to create a "fake scope" that wraps the call to the tested class and the assertions. A fake scope is used to catch all the calls to any fake object within that scope (among other things).
 
@@ -74,14 +78,16 @@ Then to do the assertions we call the "OrderedAssertions" method on the scope, a
 
 With the current implementation of the "Worker-class" the test will pass. But let's change the order of the calls in the "JustDoIt-method":
 
-    public void JustDoIt()
+```csharp
+public void JustDoIt()
+{ 
+    using (this.unitOfWorkFactory.BeginWork())
     { 
-        using (this.unitOfWorkFactory.BeginWork())
-        { 
-            
-        }
-        this.usefulCollaborator.JustDoIt();
+        
     }
+    this.usefulCollaborator.JustDoIt();
+}
+```
 
 The test will now fail with the following exception message:
 
