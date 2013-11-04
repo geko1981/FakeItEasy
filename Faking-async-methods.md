@@ -1,6 +1,6 @@
 The faking of `async` methods is fully supported in FakeItEasy.
 
-```C#
+```csharp
 public class Foo
 {
     public virtual async Task<string> Bar()
@@ -12,14 +12,14 @@ public class Foo
 
 A call to a non-configured async method on a fake will return a [[Dummy|Dummies#how-are-the-dummies-made]]  `Task` or `Task<T>`, just as if it were any other method that returns a `Task` or `Task<T>`. For example:
 
-```C#
+```csharp
 var foo = A.Fake<Foo>();
 var bar = await foo.Bar(); // will return immediately and return string.Empty
 ```
 
 Of course, you can still configure calls to `async` methods as you would normally:
 
-```C#
+```csharp
 A.CallTo(() => foo.Bar()).Returns(Task.FromResult("bar"));
 ```
 
