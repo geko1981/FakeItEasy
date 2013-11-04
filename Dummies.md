@@ -3,7 +3,7 @@ A Dummy is an object that FakeItEasy can provide when an object of a certain typ
 ## How to use them in your tests
 Consider this example. Say that you want to test the following class:
 
-```C#
+```csharp
 public class Library
 {
     public bool Checkout(Card patronCard, Book someBook);
@@ -12,13 +12,13 @@ public class Library
 
 Maybe in one of your tests you want to invoke `Checkout` with an expired library card. The checkout should fail, regardless of the book being checked out&mdash;only the status of the card matters. Instead of writing
 
-```C#
+```csharp
 library.Checkout(MakeExpiredCard(), new Book { Title = "The Ocean at the End of the Lane" } );
 ```
 
 You can write:
 
-```C#
+```csharp
 library.Checkout(MakeExpiredCard(), A.Dummy<Book>());
 ```
 
@@ -46,7 +46,7 @@ If none of these strategies yield a viable Dummy, then FakeItEasy can't make a D
 
 If FakeItEasy's default dummy creation behavior isn't adequate, you can provide your own. Here's an example:
 
-```C#
+```csharp
 class DummyBookDefinition : DummyDefinition<Book>
 {
     protected override Book CreateDummy()
@@ -61,7 +61,7 @@ On startup, FakeItEasy searches its own assembly, assemblies in the current AppD
 
 `IDummyDefinition` has this signature:
 
-```C#
+```csharp
 public interface IDummyDefinition
 {
     Type ForType { get; }
