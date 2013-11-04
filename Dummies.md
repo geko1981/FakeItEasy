@@ -13,7 +13,8 @@ public class Library
 Maybe in one of your tests you want to invoke `Checkout` with an expired library card. The checkout should fail, regardless of the book being checked out&mdash;only the status of the card matters. Instead of writing
 
 ```csharp
-library.Checkout(MakeExpiredCard(), new Book { Title = "The Ocean at the End of the Lane" } );
+library.Checkout(MakeExpiredCard(),
+                 new Book { Title = "The Ocean at the End of the Lane" } );
 ```
 
 You can write:
