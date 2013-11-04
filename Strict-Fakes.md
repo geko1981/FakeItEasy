@@ -2,13 +2,13 @@
 
 However, FakeItEasy also supports strict fakes, in which all calls to unconfigured members are rejected, throwing an `ExpectationException`. Strict fakes are created by supplying an `Action<IFakeOptionsBuilder<T>>` at creation time. The options builder should invoke the `Strict` method:
 
-```C#
+```csharp
 var foo = A.Fake<IFoo>(x => x.Strict());
 ```
 
 After you have configured your fake in this fashion you can configure any "allowed" calls as usual, for example:
 
-```C#
+```csharp
 A.CallTo(() => foo.Bar()).Returns("bar");
 ```
 
