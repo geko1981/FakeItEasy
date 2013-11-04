@@ -19,7 +19,7 @@ When a method or property is declared on a faked interface, or is declared as ab
 
 Suppose we have the following interface definition
 
-```C#
+```csharp
 public interface Interface
 {
     bool BooleanFunction();
@@ -33,7 +33,7 @@ public interface Interface
 
 Then the following test will pass
 
-```C#
+```csharp
 public void Members_should_return_empty_string_default_or_fake_another_fake()
 {
     var fakeLibrary = A.Fake<Interface>();
