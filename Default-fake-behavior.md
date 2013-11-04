@@ -46,7 +46,8 @@ public void Members_should_return_empty_string_default_or_fake_another_fake()
     Assert.AreEqual(string.Empty, fakeLibrary.StringFunction());
 
     Assert.IsInstanceOfType(fakeLibrary.FakeableClassFunction(), typeof(FakeableClass));
-    Assert.AreEqual("FakeableClassProxy", fakeLibrary.FakeableClassFunction().GetType().Name); // to show it's a fake
+    Assert.AreEqual("FakeableClassProxy",
+                    fakeLibrary.FakeableClassFunction().GetType().Name); // to show it's a fake
 
     Assert.IsNull(fakeLibrary.UnfakeableClassProperty);
 
