@@ -6,7 +6,6 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
     * [[How to fake internal (Friend in VB) types]]
 * Specifying Fakes’ Behavior
     * [[Specifying Return Values]]
-    * [[Specifying Calculated Return Values]]
     * [[Read/Write Property Behaviour]]
     * [[Using out and ref parameters]]
     * [[Doing Nothing]]
