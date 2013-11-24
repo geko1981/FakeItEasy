@@ -4,9 +4,10 @@
     * [[How to fake internal (Friend in VB) types]]
 * Specifying Fakes’ Behavior
     * [[Specifying Return Values]]
+    * [[Throwing Exceptions]]
+    * [[Doing Nothing]]
     * [[Read/Write Property Behaviour]]
     * [[Using out and ref parameters]]
-    * [[Doing Nothing]]
     * [[Invoking Custom Code]]
 * [[Argument constraints]]
 * [[Assertion]]
