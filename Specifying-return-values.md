@@ -31,7 +31,7 @@ A.CallTo(() => fakeShop.NumberOfSweetsSoldOn(A<DateTime>.Ignored)
 ```
 The type of the `Func` sent to `ReturnsLazily` isn't checked at compile time, but any mismatch should trigger a helpful error message.
 
-If more advanced decision-making is required, or the method has more than 4 parameters, or has [[out or ref parameters|Specifying out and ref parameters]], the convenience methods won't work. Use the variant that takes an `IFakeObjectCall` instead:
+If more advanced decision-making is required, or the method has more than 4 parameters, or has [[out or ref parameters|Assigning out and ref parameters]], the convenience methods won't work. Use the variant that takes an `IFakeObjectCall` instead:
 
 ```charp
 A.CallTo(objectCall => fakeShop.SomeCall(…)
