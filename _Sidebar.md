@@ -7,7 +7,7 @@
     * [[Throwing Exceptions]]
     * [[Doing Nothing]]
     * [[Read/Write Property Behaviour]]
-    * [[Using out and ref parameters]]
+    * [[Assigning out and ref parameters]]
     * [[Invoking Custom Code]]
 * [[Argument constraints]]
 * [[Assertion]]
