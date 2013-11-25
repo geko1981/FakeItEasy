@@ -11,6 +11,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
     * [[Read/Write Property Behaviour]]
     * [[Assigning out and ref parameters]]
     * [[Invoking Custom Code]]
+    * [[Limited Call Specifications]]
 * [[Argument constraints]]
 * [[Assertion]]
     * [[Ordered assertions]]

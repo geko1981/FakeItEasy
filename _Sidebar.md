@@ -9,6 +9,7 @@
     * [[Read/Write Property Behaviour]]
     * [[Assigning out and ref parameters]]
     * [[Invoking Custom Code]]
+    * [[Limited Call Specifications]]
 * [[Argument constraints]]
 * [[Assertion]]
     * [[Ordered assertions]]
