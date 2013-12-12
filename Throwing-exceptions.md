@@ -15,15 +15,17 @@ A.CallTo(() => fakeShop.NumberOfSweetsSoldOn(DateTime.MaxValue))
 There are also more advanced methods that can throw exceptions based on values calculated at runtime. These act similarly to how you [[specify return values that are calculated at call time|Specifying return values#return-values-calculated-at-call-time]]. For example
 
 ```csharp
-// generate the exception at call time
+// Generate the exception at call time.
 A.CallTo(() => fakeShop.NumberOfSweetsSoldOn(A<DateTime>._))
  .Throws(() => new InvalidDateException(DateTime.UtcNow + " is in the future");
 
-// pass up to 4 original call argument values into the method that creates the exception
+// Pass up to 4 original call argument values into the method that creates the exception.
+// Since FakeItEasy 1.15.0, this works even if NumberOfSweetsSoldOn takes a ref DateTime 
+// an out DateTime.
 A.CallTo(() => fakeShop.NumberOfSweetsSoldOn(A<DateTime>._))
  .Throws((DateTime when)=>new InvalidDateException(when + " is in the future");
 
-// pass an IFakeObjectCall into the creation method for more advanced scenarios
+// Pass an IFakeObjectCall into the creation method for more advanced scenarios.
 A.CallTo(() => fakeShop.NumberOfSweetsSoldOn(A<DateTime>._))
  .Throws(callObject => new InvalidDateException(callObject.FakedObject +
                                                 " is closed on " +
