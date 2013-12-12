@@ -29,9 +29,10 @@ A.CallTo(() => fakeShop.NumberOfSweetsSoldOn(A<DateTime>.Ignored)
                        .ReturnsLazily((DateTime theDate) => 
                                           theDate.DayOfWeek == DayOfWeek.Sunday ? 0 : 200);
 ```
-The type of the `Func` sent to `ReturnsLazily` isn't checked at compile time, but any mismatch should trigger a helpful error message.
+The type of the `Func` sent to `ReturnsLazily` isn't checked at compile time, but any _type_ mismatch should trigger a helpful error message.
+Starting with FakeItEasy 1.15.0, the convenience methods may be used with methods that take `out` and `ref` parameters. This means that the previous example would work even if `NumberOfSweetsSoldOn` took an `out DateTime` or a `ref DateTime`.
 
-If more advanced decision-making is required, or the method has more than 4 parameters, or has [[out or ref parameters|Assigning out and ref parameters]], the convenience methods won't work. Use the variant that takes an `IFakeObjectCall` instead:
+If more advanced decision-making is required, or the method has more than 4 parameters, the convenience methods won't work. Use the variant that takes an `IFakeObjectCall` instead:
 
 ```charp
 A.CallTo(objectCall => fakeShop.SomeCall(…)
