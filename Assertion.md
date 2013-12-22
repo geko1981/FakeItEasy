@@ -43,7 +43,41 @@ Repeated.NoMoreThan.Times(10) // The call must have happened any number of times
 Repeated.Like(x => x % 2 == 0) // The call must have happened an even number of times.
 ```
 
-##VB.Net
+# Asserting Calls Made with Mutable Arguments
+When FakeItEasy records a method (or property) call, it remembers which objects were used as argument, but does not take a snapshot of the objects' state. This means that if an object is changed after being used as an argument, but before argument constraints are checked, expected matches may not happen. For example, 
+
+```csharp
+var aList = new List<int> {1, 2, 3};
+
+A.CallTo(() => myFake.SaveList(A<List<int>>._))
+    .Returns(true);
+
+myFake.SaveList(aList);
+aList.Add(4);
+
+A.CallTo(() => myFake.SaveList(A<List<int>>.That.IsThisSequence(1, 2, 3)))
+    .MustHaveHappend();
+```
+
+The `MustHaveHappened` will fail, because at the time the `IsThisSequence` check is made, `aList` has 4 elements, not 3, and `IsThisSequence` only has the reference to `aList` to use in its check, not a deep copy or some other form of snapshot—it has to work with the _current_ state.
+
+If your test or production code must mutate call arguments between the time of the call and the assertion time, you must look for some other way to very the call. Perhaps using `IsSameAs` will suffice, if the correct behaviour of the System Under Test can otherwise be inferred. Or consider using [[Invokes|Invoking custom code]] to create a snapshot of the object and interrogate it later:
+
+```csharp
+var aList = new List<int> { 1, 2, 3};
+
+List<int> capturedList;
+A.CallTo(() => myFake.SaveList(A<List<int>>._))
+    .Invokes((List<int> list) => capturedList = list)
+    .Returns(true);
+
+myFake.SaveList(aList);
+aList.Add(4);
+
+Assert.That(capturedList, Is.EqualTo(new List<int> {1, 2, 3}));
+```
+
+#VB.Net
 
 ```vb.net
 ' Function calls are the same as in C#
