@@ -50,7 +50,6 @@ If more complicated constraints are needed, the `That` method can be used. There
 |IsEmpty()|empty enumerable|
 |Contains(item)|item's presence in an enumerable|
 |IsSameSequenceAs(enumerable)|sequence equality, like `System.Linq.Enumerable.SequenceEqual`|
-|IsThisSequence(item1, item2, …)|like `IsSameSequenceAs`, using the arguments as the sequence to match|
 |Not|inverts the sense of the matcher|
 
 # Custom matching
