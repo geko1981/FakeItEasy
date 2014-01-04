@@ -1,6 +1,7 @@
 There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to ask questions about FakeItEasy and its usage
 
 * [[Creating fakes]]
+
     * [[What can be faked]]
     * [[Default fake behavior]]
     * [[How to fake internal (Friend in VB) types]]
