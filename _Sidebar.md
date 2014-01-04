@@ -27,5 +27,14 @@
 
 ***
 
-### Owners
-* [[Owner guidelines]]
+### [[Contributors]]
+* [[Issue Labels]]
+* [[Huboard]]
+* [[Milestones]]
+
+***
+
+### [[Owners]]
+* [[Managing Issues]]
+* [[Managing Milestones]]
+* [[Managing Pull Requests]]
