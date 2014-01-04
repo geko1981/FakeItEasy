@@ -24,15 +24,15 @@ Labels **P1**, **P2** and **P3** are used to assign priority to issues:
 
 * **P1** - the issue is of high value and should be addressed ASAP.
 * **P2** - (default priority) the issue has considerable value and is a candidate for implementation when resources are available.
-* **P3** - the issue has value but is considered to be less beneficial than issues currently assigned **P2**. Issues may be selectively promoted from **P3** to **P2** when there are very few open **P2** issues.
+* **P3** - the issue has value but is considered to be less beneficial than issues currently assigned P2. Issues may be selectively promoted from P3 to P2 when there are very few open P2 issues.
 
 ### Workflow
 There are used by [Huboard](https://huboard.com/FakeItEasy/FakeItEasy) to manage the workflow of issues:
 
-**0 - Backlog** - the default placement of all new issues. Issues in the backlog are yet to be understood or require analysis and/or discussion with regard to functionality, implementation, etc.
-**1 - Ready** - the issue is understood, labelled correctly and work can commence immediately.
-**2 - Working** - the issue is currently being worked on.
-**3 - Done** - work has finished on the issue and it can be closed. In the case of a code change, this means the work has been merged to master and the functionality is complete. In the case of a question, the question has been answered and the user asking the question has acknowledged it. Other issues types as appropriate.
+* **0 - Backlog** - the default placement of all new issues. Issues in the backlog are yet to be understood or require analysis and/or discussion with regard to functionality, implementation, etc.
+* **1 - Ready** - the issue is understood, labelled correctly and work can commence immediately.
+* **2 - Working** - the issue is currently being worked on.
+* **3 - Done** - work has finished on the issue and it can be closed. In the case of a code change, this means the work has been merged to master and the functionality is complete. In the case of a question, the question has been answered and the user asking the question has acknowledged it. Other issues types as appropriate.
 
 # Huboard
 
