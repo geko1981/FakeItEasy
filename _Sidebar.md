@@ -1,4 +1,4 @@
-### Users
+### [Users][Home]
 
 * [[Creating fakes]]
     * [[What can be faked]]
