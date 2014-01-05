@@ -10,7 +10,7 @@ Generally, higher priority issues should be addressed before lower priority issu
 
 ### Huboard
 
-New issues should be immediately the 'Backlog' column. Issues can be moved across the [board](https://huboard.com/FakeItEasy/FakeItEasy) by dragging them. This updates the [[workflow labels|Issue-labels#workflow]] accordingly) and owners can be assigned to issues by dragging their gravatar onto them. The beta version of Huboard also allows closed issues to be seen in the final column and for issues to be closed from the Huboard UI.
+New issues should be immediately placed in the 'Backlog' column. Issues can be moved across the [board](https://huboard.com/FakeItEasy/FakeItEasy) by dragging them. This updates the [[workflow labels|Issue-labels#workflow]] accordingly) and owners can be assigned to issues by dragging their gravatar onto them. The beta version of Huboard also allows closed issues to be seen in the final column and for issues to be closed from the Huboard UI.
 
 Issues which are currently in the 'Working' column should generally be addressed (implementation, raising/reviewing PRs) before any which are currently in the 'Backlog' or 'Ready' columns. This helps to keep the 'Working' column lean so that changes can be released early and rebases with conflicts are kept to a minimum.
 
