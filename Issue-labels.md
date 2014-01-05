@@ -2,6 +2,8 @@ Issues will be labelled by the FakeItEasy owners after they are raised. The labe
 
 ### General
 
+The are descriptive labels which help to manage the list of issues. If you feel an issue is incorrectly labelled please bring this to the attention of the owners by adding a comment to the issue.
+
 * **breaking** - a breaking change which requires a major version bump
 * **bug** - a fault in the implementation of a current feature
 * **build** - an issue related to the building of FakeItEasy packages from source code
@@ -19,7 +21,7 @@ Issues will be labelled by the FakeItEasy owners after they are raised. The labe
 * **wontfix** - the issue has been recognised but the coordinators have decided that it will not be implemented.
 
 ### Priority
-Labels **P1**, **P2** and **P3** are used to assign priority to issues:
+Labels **P1**, **P2** and **P3** are used to assign priority to issues. If you feel an issue is incorrectly prioritised please bring this to the attention of the owners by adding a comment to the issue.
 
 * **P1** - the issue is of high value and should be addressed ASAP.
 * **P2** - (default priority) the issue has considerable value and is a candidate for implementation when resources are available.
