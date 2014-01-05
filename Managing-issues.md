@@ -1,6 +1,6 @@
 ### Issue labels
 
-All issues should default to being labelled **0 - Backlog** (see Huboard below) and **P2** as the default priority level, as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained.
+All issues should default to being labelled **0 - Backlog** (see Huboard below) and **P2** as the default priority level (see Priorities below), as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained.
 
 ### Priorities
 
