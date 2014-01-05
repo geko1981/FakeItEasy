@@ -28,13 +28,13 @@
 ***
 
 ### Contributors
-* [[Issue Labels]]
+* [[Issue labels]]
 * [[Huboard]]
 * [[Milestones]]
 
 ***
 
 ### Owners
-* [[Managing Issues]]
-* [[Managing Milestones]]
-* [[Managing Pull Requests]]
+* [[Managing issues]]
+* [[Managing milestones]]
+* [[Managing pull requests]]
