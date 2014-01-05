@@ -1,6 +1,6 @@
 ### Issue labels
 
-All issues should default to being labelled **0 - Backlog** (see Huboard below) and **P2** as the default priority level (see Priorities below), as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained. An issue must have appropriate labels assigned before it can be moved into **1 - Ready** (see Huboard below).
+All issues should default to being labelled **0 - Backlog** (see [[workflow labels|https://github.com/FakeItEasy/FakeItEasy/wiki/Issue-labels#workflow]]) and **P2** as the default priority level (see Priorities below), as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained. An issue must have appropriate labels assigned before it can be moved into **1 - Ready** (see Huboard below).
 
 ### Priorities
 
