@@ -8,7 +8,7 @@ Issues should default to priority level 2 (label **P2**). If an issue is judged 
 
 Generally, higher priority issues should be addressed before lower priority issues.
 
-Issues which are in the 'Working' column in Huboard (see below) should also generally be addressed (implementation, raising/reviewing PRs) before any which are in the 'Backlog' or 'Ready' columns. This helps to keep the 'Working' column lean so that changes can be released early and rebases with conflicts are kept to a minimum.
+Issues which are currently in the 'Working' column in Huboard (see below) should also generally be addressed (implementation, raising/reviewing PRs) before any which are currently in the 'Backlog' or 'Ready' columns. This helps to keep the 'Working' column lean so that changes can be released early and rebases with conflicts are kept to a minimum.
 
 ### Huboard
 
