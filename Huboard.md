@@ -1,4 +1,4 @@
-We use [Huboard](https://huboard.com/FakeItEasy/FakeItEasy) for a Kanban style view of the issues and their progress. Issues can be moved across columns by dragging them (this updates the [[workflow labels|Issue-labels#workflow]] accordingly) and owners can be assigned to issues by dragging their gravatar onto them. The beta version of Huboard also allows closed issues to be seen in the final column and for issues to be closed from the Huboard UI.
+We use [Huboard](https://huboard.com/FakeItEasy/FakeItEasy) for a Kanban style view of the issues and their progress. The FakeItEasy owners will move the issues across the board as they progress.
 
 ### Columns
 
