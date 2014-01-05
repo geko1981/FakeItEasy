@@ -1,0 +1,1 @@
+Each milestone relates to a released version of the FakeItEasy package. Issues are assigned to a milestone when they form part of the change in functionality of that release. Issues assigned to a given milestone will appear in the release notes for that release. Any contributors which have been involved in issues for a given milestone will also be mentioned in the release notes.
