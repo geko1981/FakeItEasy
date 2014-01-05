@@ -17,3 +17,7 @@ If an owner decides to work on an issue then they can assign themselves to it, e
 If a contributor has volunteered to take on an issue and you feel it is suitable for them, add the **taken** label to the issue and add a comment to the issue indicating who it has been taken by. Move the issue from **Ready** to **Working**. Generally we should be generous in assigning issue to contributors. More complex issues should have a design discussed and agreed up front. Changes to the public API should also have the agreement of at least two owners.
 
 If a contributor has been assigned an issue and becomes unresponsive then the **taken** label should be removed and the issue should be moved back into **Ready**. A comment should be added indicating the issue is no longer taken.
+
+### Milestones
+
+A milestone relates directly to a release. As soon as an issue is moved into **Working** it should be added to the next milestone in the assumption that it will form part of that release. Note that this should only be done for issues which will form part of the release notes for that milestone. Issues which are of internal concern only, e.g. refactoring, build improvements, documentation (outside of code), etc. do not form part of the release notes for a package and therefore do not form part of a milestone.
