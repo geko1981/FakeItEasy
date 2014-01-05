@@ -6,6 +6,8 @@ All issues should default to being labelled **0 - Backlog** (see Huboard below) 
 
 Issues should default to priority level 2 (label **P2**). If an issue is judged to be important, e.g. a major bug, a new feature with great value, etc. then it should be promoted to **P1**. An issue which is a nice to have but less important than others should be demoted to **P3**. If there are very few **P2** issues open then issues may be selectively promoted from **P3** to **P2**.
 
+Generally, higher priority issues should be addressed before lower priority issues. Issues which are in the 'Working' column in Huboard (see below) should also generally be addressed before any which are in the 'Backlog' or 'Ready'. This helps to keep the 'Working' column lean so that changes can be released early and rebases with conflicts are kept to a minimum.
+
 ### Huboard
 
 Issues can be moved across the [board](https://huboard.com/FakeItEasy/FakeItEasy) by dragging them. This updates the [[workflow labels|Issue-labels#workflow]] accordingly) and owners can be assigned to issues by dragging their gravatar onto them. The beta version of Huboard also allows closed issues to be seen in the final column and for issues to be closed from the Huboard UI.
