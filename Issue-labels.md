@@ -28,4 +28,6 @@ Labels **P1**, **P2** and **P3** are used to assign priority to issues. If you f
 * **P3** - the issue has value but is considered to be less beneficial than issues currently assigned P2. Issues may be selectively promoted from P3 to P2 when there are very few open P2 issues.
 
 ### Workflow
-The labels **0 - Backlog**, **1 - Ready**, **2 - Working** and **3 - Done** are used by [[Huboard]] to manage the workflow of issues.
+The labels **0 - Backlog**, **1 - Ready**, **2 - Working** and **3 - Done** are used by [[Huboard]] to manage the workflow of issues. Each label corresponds to a column in Huboard. The numeric prefix determines the column order.
+
+The communication between GitHub and Huboard is two-way. If you manually assign one of these labels to an issue in GitHub then the issue will move to the appropriate column in Huboard. If you move an issue to a column in Huboard then the appropriate label will be added to the issue in GitHub (and the label for the previous column will be removed).
