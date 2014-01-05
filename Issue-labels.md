@@ -1,3 +1,5 @@
+Issues will be labelled by the FakeItEasy owners are after they are raised. The labels for a given issue may change during its lifetime as more insight is gained.
+
 ### General
 
 * **breaking** - a breaking change which requires a major version bump
