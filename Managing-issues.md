@@ -2,7 +2,7 @@
 
 All issues should default to being labelled **0 - Backlog** (see [[workflow labels|Issue labels#workflow]]) and **P2** as the default priority level (see Priorities below), as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained. An issue must have appropriate labels assigned before it can be moved into **1 - Ready** (see Huboard below).
 
-Unfortunately GitHub does not provide any history of label changes so, where practical, whenever changing the labels on issue, add a comment to the issue recording the change and the reasoning.
+Unfortunately GitHub does not provide any history of label changes so, where practical, when changing the labels on issue, add a comment to the issue recording the change and the reasoning.
 
 ### Priorities
 
