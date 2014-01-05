@@ -1,4 +1,4 @@
-We use [Huboard](https://huboard.com/FakeItEasy/FakeItEasy) for a Kanban style view of the issues and their progress. The FakeItEasy owners will move the issues across the board as they progress.
+We use [Huboard](https://huboard.com/FakeItEasy/FakeItEasy) for a Kanban style view of the issues and their progress. The FakeItEasy owners will move the issues across the board as they progress, which also updates the [[workflow labels|Issue-labels#workflow]] accordingly).
 
 ### Columns
 
