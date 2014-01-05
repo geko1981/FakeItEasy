@@ -35,5 +35,6 @@
 ***
 
 ### Owners
+* [[Contributor relations]]
 * [[Managing issues]]
 * [[Managing pull requests]]
