@@ -1,4 +1,4 @@
-### [[Users|Home]]
+### Users
 
 * [[Creating fakes]]
     * [[What can be faked]]
@@ -27,14 +27,14 @@
 
 ***
 
-### [[Contributors]]
+### Contributors
 * [[Issue Labels]]
 * [[Huboard]]
 * [[Milestones]]
 
 ***
 
-### [[Owners]]
+### Owners
 * [[Managing Issues]]
 * [[Managing Milestones]]
 * [[Managing Pull Requests]]
