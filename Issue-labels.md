@@ -1,4 +1,4 @@
-Issues will be labelled by the FakeItEasy owners are after they are raised. The labels for a given issue may change during its lifetime as more insight is gained.
+Issues will be labelled by the FakeItEasy owners after they are raised. The labels for a given issue may change during its lifetime as more insight is gained.
 
 ### General
 
