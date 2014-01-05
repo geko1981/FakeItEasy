@@ -1,10 +1,11 @@
 ### Issue labels
 
-All issues should default to being labelled **0 - Backlog** (see Huboard below) and **P2** as the default priority level (see Priorities below), as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained. An issue must have appropriate labels assigned before it can be moved into ** 1- Ready** (see Huboard below).
+All issues should default to being labelled **0 - Backlog** (see Huboard below) and **P2** as the default priority level (see Priorities below), as well as appropriate [[general labels|Issue labels#general]]. This should happen ASAP after an issue is created. As the issue progresses, the labels should be kept up to date to reflect any insights gained. An issue must have appropriate labels assigned before it can be moved into **1 - Ready** (see Huboard below).
 
 ### Priorities
 
-Issues should default to priority level 2 (label **P2**). If an issue is judged to be important, e.g. a major bug, a new feature with great value, etc. then it should be promoted to **P1**. An issue which is a nice to have but less important than others should be demoted to **P3**. If there are very few **P2** issues open then issues may be selectively promoted from **P3** to **P2**. An issue cannot be moved into **1 - Ready** until it has a priority assigned.
+Issues should default to priority level 2 (label **P2**). If an issue is judged to be important, e.g. a major bug, a new feature with great value, etc. then it should be promoted to **P1**. An issue which is a nice to have but less important than others should be demoted to **P3**. If there are very few **P2** issues open then issues may be selectively promoted from **P3** to **P2**. An issue cannot be moved into
+**1 - Ready** until it has a priority assigned.
 
 Generally, higher priority issues should be addressed before lower priority issues.
 
