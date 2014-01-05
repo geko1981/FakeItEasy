@@ -36,5 +36,4 @@
 
 ### Owners
 * [[Managing issues]]
-* [[Managing milestones]]
 * [[Managing pull requests]]
