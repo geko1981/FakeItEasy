@@ -64,7 +64,7 @@ The `MustHaveHappened` will fail, because at the time the `IsThisSequence` check
 If your test or production code must mutate call arguments between the time of the call and the assertion time, you must look for some other way to very the call. Perhaps using `IsSameAs` will suffice, if the correct behaviour of the System Under Test can otherwise be inferred. Or consider using [[Invokes|Invoking custom code]] to create a snapshot of the object and interrogate it later:
 
 ```csharp
-var aList = new List<int> { 1, 2, 3};
+var aList = new List<int> {1, 2, 3};
 
 List<int> capturedList;
 A.CallTo(() => myFake.SaveList(A<List<int>>._))
@@ -80,10 +80,11 @@ Assert.That(capturedList, Is.EqualTo(new List<int> {1, 2, 3}));
 #VB.Net
 
 ```vb.net
-' Function calls are the same as in C#
+' Functions and Subs can be asserted using their respective keywords
 A.CallTo(Function() foo.Bar()).MustHaveHappened()
+A.CallTo(Sub() foo.Baz(A(Of String).Ignored)).MustHaveHappened()
 
-' Sub calls uses the "FakeItEasy.VisualBasic.NextCall" class
+' Can also use the "FakeItEasy.VisualBasic.NextCall" class
 NextCall.To(foo).MustHaveHappened()
 foo.SomeSub()
 ```
