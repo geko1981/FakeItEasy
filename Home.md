@@ -20,6 +20,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Strict fakes]]
 * [[Dummies]]
 * [[Formatting Argument Values]]
+* [[Platform support]]
 * [[Why was FakeItEasy created?]]
 * External Resources
     * [Mocking HttpContext with FakeItEasy](http://blog.jonathanchannon.com/2013/04/30/mocking-httpcontext-with-fake-it-easy/)
