@@ -22,6 +22,7 @@
 * [[Formatting Argument Values]]
 * [[Platform support]]
 * [[Why was FakeItEasy created?]]
+* [[Upgrading from older versions]]
 * External Resources
     * [Mocking HttpContext with FakeItEasy](http://blog.jonathanchannon.com/2013/04/30/mocking-httpcontext-with-fake-it-easy/)
     * [Migration from Moq to FakeItEasy with Resharper Search Patterns](http://www.planetgeek.ch/2013/07/18/migration-from-moq-to-fakeiteasy-with-resharper-search-patterns/)
