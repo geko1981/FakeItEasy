@@ -5,6 +5,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
     * [[Default fake behavior]]
     * [[How to fake internal (Friend in VB) types]]
 * Specifying Fakes’ Behavior
+    * [[Specifying a Call to Configure]]
     * [[Specifying Return Values]]
     * [[Throwing Exceptions]]
     * [[Doing Nothing]]
