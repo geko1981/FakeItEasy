@@ -1,5 +1,6 @@
 ### Users
 
+* [[Quickstart]]
 * [[Creating fakes]]
     * [[What can be faked]]
     * [[Default fake behavior]]
