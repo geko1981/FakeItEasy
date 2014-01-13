@@ -23,6 +23,8 @@ Examples:
 var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(new object[] { "foo", "bar" }));
 
 // Specifying arguments for constructor using expression. This is refactoring friendly!
+// The constructor seen here is never actually invoked. It is an expression and it's purpose
+// is purely to communicate the constructor arguments which will be extracted from it
 var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(() => new FooClass("foo", "bar")));
 
 // Specifying additional interfaces to be implemented.
