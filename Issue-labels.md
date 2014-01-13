@@ -2,7 +2,7 @@ Issues will be labelled by the FakeItEasy owners after they are raised. The labe
 
 ### General
 
-The are descriptive labels which help to manage the list of issues. If you feel an issue is incorrectly labelled please bring this to the attention of the owners by adding a comment to the issue.
+These are descriptive labels which help to manage the list of issues. If you feel an issue is incorrectly labelled please bring this to the attention of the owners by adding a comment to the issue.
 
 * **breaking** - a breaking change which requires a major version bump
 * **bug** - a fault in the implementation of a current feature
