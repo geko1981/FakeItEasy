@@ -34,6 +34,7 @@ namespace FakeItEasyQuickstart
 ```
 
 * Most FakeItEasy functionality is reached from a common entry point: the `A` class.
+* In this example the lollipop instance is used as a stub and the shop instance is used as a mock but there's no need to know the difference, just fake it! Easy!
 * Fluent, easy-to-use syntax guides you as you configure fakes.
 
 See the [Documentation](.) for more information.
