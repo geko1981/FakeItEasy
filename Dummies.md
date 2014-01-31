@@ -60,6 +60,8 @@ class DummyBookDefinition : DummyDefinition<Book>
 ### How it works
 On startup, FakeItEasy searches its own assembly, assemblies in the current AppDomain, and assemblies in the process's current directory for classes that implement `FakeItEasy.IDummyDefinition`. Any such classes found will be used when creating Dummies. 
 
+**This does not apply to the SilverLight version of the DLL, which does not load externally-supplied Dummy Definitions.**
+
 `IDummyDefinition` has this signature:
 
 ```csharp
