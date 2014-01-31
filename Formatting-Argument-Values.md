@@ -35,6 +35,9 @@ In the original form of the message, the Book argument is just formatted using `
 ## How it works
 
 On startup, FakeItEasy searches its own assembly, assemblies in the current AppDomain, and assemblies in the process's current directory for classes that implement `FakeItEasy.IArgumentValueFormatter`. Any such classes found will be used when formatting argument values in error messages.  
+
+**This does not apply to the SilverLight version of the FakeItEasy DLL, which does not load externally-defined argument value formatters.**
+
 `IArgumentValueFormatter` has this signature:
 ```csharp
 public interface IArgumentValueFormatter
