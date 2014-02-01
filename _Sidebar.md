@@ -23,6 +23,8 @@
 * [[Dummies]]
 * [[Formatting Argument Values]]
 * [[Platform support]]
+* Troubleshooting
+    * [[Slow startup time]]
 * [[Why was FakeItEasy created?]]
 * [[Upgrading from older versions]]
 * External Resources

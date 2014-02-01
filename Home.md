@@ -23,6 +23,8 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Dummies]]
 * [[Formatting Argument Values]]
 * [[Platform support]]
+* Troubleshooting
+    * [[Slow startup time]]
 * [[Why was FakeItEasy created?]]
 * [[Upgrading from older versions]]
 * External Resources
