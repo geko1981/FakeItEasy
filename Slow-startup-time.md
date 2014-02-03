@@ -15,5 +15,5 @@ If shadow copies are enabled, and not needed, try disabling them. Often that wil
 [1]:http://msdn.microsoft.com/en-us/library/ms404279(v=vs.110).aspx
 [2]:../issues/133
 [3]:../issues/130
-[4]:http//xunit.net
+[4]:http://xunit.net
 [5]:http://www.nunit.org/
