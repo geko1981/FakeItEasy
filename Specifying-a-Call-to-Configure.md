@@ -29,6 +29,17 @@ A.CallTo(fakeShop).Where(call => call.Arguments.Count > 4)
                   .Throws(new Exception("too many arguments is bad");
 ```
 
+## Specifying protected members to configure
+
+`protected` members can't be referenced in an expression, at least from outside the class,
+so `A.CallTo(object)` must be used, as above.
+Often, a simple match on the method's name can be used:
+
+```csharp
+A.Callto(fakeShop).Where(call => call.Method.Name == "CalculateSalesForToday")
+                  .Returns(4741.71);
+```
+
 ## Specify a property `set` to configure
 
 Configuring a call to a property `set` is different from doing so for a `get`. 
