@@ -1,6 +1,6 @@
 One of the first steps in configuring a fake object's behaviour is to specify which call to configure. Like most FakeItEasy actions, this is done using a method on the `A` class: `A.CallTo`.
 
-## Use an expression to identify method calls or property `get`s
+## Specifying a method call or property `get` using an Expression
 
 ```csharp
 A.CallTo(() => fakeShop.GetTopSellingCandy())
@@ -16,7 +16,7 @@ A.CallTo(() => fakeShop.GetTopSellingCandy())
 ```
 Many types of actions can be specified, including [[returning various values|Specifying Return Values]], [[throwing exceptions]], and more.
 
-## Specifying calls to any method or `get` property
+## Specifying a call to any method or property
 Instead of supplying an expression to identify a specific method, pass the fake to `A.CallTo` to refer to any method on the fake:
 ```csharp
 A.CallTo(fakeShop).Throws(new Exception());
@@ -29,32 +29,19 @@ A.CallTo(fakeShop).Where(call => call.Arguments.Count > 4)
                   .Throws(new Exception("too many arguments is bad");
 ```
 
-## Specifying protected members to configure
-
-`protected` members can't be referenced in an expression, at least from outside the class,
-so `A.CallTo(object)` must be used, as above.
-Often, a simple match on the method's name can be used:
-
+`A.CallTo(object)` can also be used to specify property `set`s and `protected` members:
 ```csharp
-A.Callto(fakeShop).Where(call => call.Method.Name == "CalculateSalesForToday")
+A.Callto(fakeShop).Where(call => call.Method.Name == "ProtectedCalculateSalesForToday")
                   .Returns(4741.71);
-```
 
-## Specify a property `set` to configure
-
-Configuring a call to a property `set` is different from doing so for a `get`. 
-
-The workaround is to use `A.CallTo(object)` and check the property setter's special name:
-
-```csharp
 // refers to the Address property's setter
 A.CallTo(fakeShop).Where(call => call.Method.Name == "set_Address")
                   .Throws(new Exception("we can't move");
 ```
 
-[Issue 175](../issues/175) has been raised to develop a better mechanism.
+[Issue 175](../issues/175) has been raised to develop a better mechanism for specifying property `set`s.
 
-## Identify a call by example
+## Specifying a call by example
 ```csharp
 NextCall.To(fakeShop).WithAnyArguments()
                      .Throws(new Exception("we're closed");
@@ -66,7 +53,7 @@ fakeShop.SellThisCandy(lollipop); // will throw now
 ```
 
 ## VB.Net
-Special syntax is provided to allow specification of `Func`s and `Sub`s in VB, using their respective keywords:
+Special syntax is provided to specify `Func`s and `Sub`s in VB, using their respective keywords:
 
 ```vb.net
 A.CallTo(Sub() fakeShop.SellSomething()(
