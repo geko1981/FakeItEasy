@@ -27,7 +27,9 @@ var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(new object[] { "fo
 // is purely to communicate the constructor arguments which will be extracted from it
 var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(() => new FooClass("foo", "bar")));
 
-// Specifying additional interfaces to be implemented.
+// Specifying additional interfaces to be implemented. Among other uses,
+// this can help when a fake skips members because they have been 
+// explicitly implements on the class being faked.
 var foo = A.Fake<FooClass>(x => x.Implements(typeof(IFoo));
 
 // Assigning custom attributes to the faked class.
