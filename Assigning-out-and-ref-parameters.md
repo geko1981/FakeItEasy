@@ -1,6 +1,6 @@
 Sometimes methods have `out` or `ref` parameters that need filling-in when called on a Fake. Use `AssignsOutAndRefParameters`:
 ```csharp
-
+string theValue;
 A.CallTo(()=>aFakeDictionary.TryGetValue(theKey, out theValue))
  .Returns(true) 
  .AssignsOutAndRefParameters(someCoolValue);
