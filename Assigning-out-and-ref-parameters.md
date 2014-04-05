@@ -8,4 +8,4 @@ A.CallTo(()=>aFakeDictionary.TryGetValue(theKey, out theValue))
 
 `AssignsOutAndRefParameters` takes a `params object[]`, with one element (in order) for each of the `out` and `ref` parameters in the call being faked - the other arguments to the method should be omitted.
 
-While assigning out and ref parameters, the `Returns` method should be used to specify the return value for the method - `AssignsOutAndRefParameters` does not do this on its own.
+While assigning out and ref parameters, the `Returns` method (or [[some variant|Specifying return values]]) should be used to specify the return value for the method - `AssignsOutAndRefParameters` does not do this on its own.
