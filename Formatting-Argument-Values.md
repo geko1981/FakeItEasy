@@ -1,7 +1,7 @@
 FakeItEasy tries to provide helpful error messages when an [[Assertion]] isn't met. For example, when an expected call to a fake method isn't made, or when an unexpected call _is_ made. Often these messages are adequate, but sometimes there's a need to improve upon them, which can be done by writing custom argument value formatters.
 
 ## Writing a custom argument value formatter
-Just define a class that extends `FakeItEasy.ArgumentValueFormatter<T>` and include it in your test project, another assembly in the AppDomain, or even an assembly in the test project's working directory. FakeItEasy will find the class and use it when it formats the error message. Here's a sample that formats argument values of type `Book`:
+Just define a class that extends `FakeItEasy.ArgumentValueFormatter<T>`. Here's a sample that formats argument values of type `Book`:
 ```csharp
 class BookArgumentValueFormatter : ArgumentValueFormatter<Book>
 {
@@ -34,11 +34,8 @@ In the original form of the message, the Book argument is just formatted using `
 
 ## How it works
 
-On startup, FakeItEasy searches its own assembly, assemblies in the current AppDomain, and assemblies in the process's current directory for classes that implement `FakeItEasy.IArgumentValueFormatter`. Any such classes found will be used when formatting argument values in error messages.  
+FakeItEasy uses classes that implement the following interface to format argument values:
 
-**This does not apply to the SilverLight version of the FakeItEasy DLL, which does not load externally-defined argument value formatters.**
-
-`IArgumentValueFormatter` has this signature:
 ```csharp
 public interface IArgumentValueFormatter
 {
@@ -89,5 +86,8 @@ When multiple formatters have the same distance from the argument, FakeItEasy wi
 
 The formatters that FakeItEasy includes have `Priority` equal to `int.MinValue`, as do all classes that extend `ArgumentValueFormatter<T>`, unless they explicitly override the property. So, for example, a user-provided alternate formatter for `string`s should override `Priority`, having it return a higher value. Otherwise, there's no guarantee which formatter will be used.
 
+How does FakeItEasy find Argument Value Formatters?
+
+On initialization, FakeItEasy [[looks for Discoverable Extension Points|Scanning for Extension Points]], including Argument Value Formatters.
 ----
 1. In FakeItEasy 1.13.1 and earlier, the distance `0` was returned if the ForType and ArgType were the same **or** if ForType was an interface that ArgType implements, so if there were two formatters, each matching one of those conditions, there was no way to tell which one would be used. This was fixed in [Issue 142](../issues/142).
