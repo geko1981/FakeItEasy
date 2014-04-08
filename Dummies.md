@@ -58,11 +58,8 @@ class DummyBookDefinition : DummyDefinition<Book>
 ```
 
 ### How it works
-On startup, FakeItEasy searches its own assembly, assemblies in the current AppDomain, and assemblies in the process's current directory for classes that implement `FakeItEasy.IDummyDefinition`. Any such classes found will be used when creating Dummies. 
 
-**This does not apply to the SilverLight version of the DLL, which does not load externally-supplied Dummy Definitions.**
-
-`IDummyDefinition` has this signature:
+FakeItEasy uses classes that implement the following interface to create Dummies:
 
 ```csharp
 public interface IDummyDefinition
@@ -75,6 +72,10 @@ public interface IDummyDefinition
 When FakeItEasy tries to create a Dummy, it looks at all known `IDummyDefinition` implementations and if one of them has a `ForType` that matches the desired type, `CreateDummy` is used.
 
 Although it's possible to implement `IDummyDefinition` explicitly, the preferred approach is to extend `abstract class DummyDefinition<T>: IDummyDefinition`, where `T` is the type of dummy to produce, as in the example above. `DummyDefinition<T>` implements `ForType` (returning `T`), so all that's needed is to implement the abstract `CreateDummy` method, having it return the Dummy.
+
+### How does FakeItEasy find the Dummy Definitions?
+
+On initialization, FakeItEasy [[looks for Discoverable Extension Points|Scanning for Extension Points]], including Dummy Definitions.
 
 ----
 1. In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and (for example) an `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
