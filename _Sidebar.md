@@ -22,6 +22,8 @@
 * [[Strict fakes]]
 * [[Dummies]]
 * [[Formatting Argument Values]]
+* [[Scanning for Extension Points]]
+* [[Bootstrapper]]
 * [[Platform support]]
 * Troubleshooting
     * [[Slow startup time]]
