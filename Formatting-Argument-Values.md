@@ -86,8 +86,9 @@ When multiple formatters have the same distance from the argument, FakeItEasy wi
 
 The formatters that FakeItEasy includes have `Priority` equal to `int.MinValue`, as do all classes that extend `ArgumentValueFormatter<T>`, unless they explicitly override the property. So, for example, a user-provided alternate formatter for `string`s should override `Priority`, having it return a higher value. Otherwise, there's no guarantee which formatter will be used.
 
-How does FakeItEasy find Argument Value Formatters?
+###How does FakeItEasy find Argument Value Formatters?
 
 On initialization, FakeItEasy [[looks for Discoverable Extension Points|Scanning for Extension Points]], including Argument Value Formatters.
+
 ----
 1. In FakeItEasy 1.13.1 and earlier, the distance `0` was returned if the ForType and ArgType were the same **or** if ForType was an interface that ArgType implements, so if there were two formatters, each matching one of those conditions, there was no way to tell which one would be used. This was fixed in [Issue 142](../issues/142).
