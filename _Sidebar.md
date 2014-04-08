@@ -22,6 +22,7 @@
 * [[Strict fakes]]
 * [[Dummies]]
 * [[Formatting Argument Values]]
+* [[Scanning for Extension Points]]
 * [[Platform support]]
 * Troubleshooting
     * [[Slow startup time]]
