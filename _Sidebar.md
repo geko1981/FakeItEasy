@@ -35,7 +35,7 @@
 
 ***
 
-### Contributors
+### [[Contributors|Contributing]]
 * [[Issue labels]]
 * [[Huboard]]
 * [[Milestones]]
