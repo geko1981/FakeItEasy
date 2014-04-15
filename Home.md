@@ -22,6 +22,8 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Strict fakes]]
 * [[Dummies]]
 * [[Formatting Argument Values]]
+* [[Scanning for Extension Points]]
+* [[Bootstrapper]]
 * [[Platform support]]
 * Troubleshooting
     * [[Slow startup time]]
