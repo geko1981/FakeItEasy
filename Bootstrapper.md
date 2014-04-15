@@ -7,7 +7,7 @@ Some behavior is triggered implicitly. FakeItEasy initializes itself when its cl
 At present, the Bootstrapper provides only one service:
 
 * `GetAssemblyFileNamesToScanForExtensions` provides a list of absolute paths to assemblies that should be [[scanned for extension points|Scanning for Extension Points]].  
-The default behavior is to return a list of all DLLs in the current working directory.
+The default behavior is to return an empty list.<sup>2</sup>
 
 ## How can the behavior be changed?
 
@@ -15,16 +15,16 @@ Provide an alternative bootstrapper class and ensure that it is loaded in the cu
 
 The best way to provide an alternative implementation is to **extend FakeItEasy.DefaultBootstrapper**. This class defines the default FakeItEasy setup behavior, so using it as a base allows clients to change only those aspects of the initialization that need to be customized.
 
-### An example: disabling on-disk assembly scanning for extensions
+### An example: returning a specific extra assembly scan for extensions
 
-One recurring complaint about FakeItEasy is that the startup time is slow, especially for solutions that have many assemblies. This is often caused by FakeItEasy examining all assemblies in the current directory in case they include extension points. If a test solution does not define any extension points in assemblies that are not currently loaded in the AppDomain, examining the on-disk assemblies is more annoying than helpful. The following bootstrapper can be used to keep those assemblies from being scanned.
+Most often, FakeItEasy extension points will be defined in assemblies that are already loaded at the time that FakeItEasy is used. In some cases, extensions may reside in assemblies that are not (yet) loaded. Perhaps the extensions are distributed in a shared assembly that does not need to be referenced by any other code. The following bootstrapper can be used to force an additional assembly to be scanned for extension points.
 
 ```csharp
-public class NoExternalScanningBootstrapper : FakeItEasy.DefaultBootstrapper
+public class ScanAnExternalAssemblyBootstrapper : FakeItEasy.DefaultBootstrapper
 {
     public override IEnumerable<string> GetAssemblyFilenamesToScanForExtensions()
     {
-        return Enumerable.Empty<string>();
+        return new [] { @"c:\full\path\to\another\assembly.dll" };
     }
 }
 ```
@@ -37,3 +37,4 @@ Just before the first Bootstrapper function needs to be accessed, FakeItEasy che
 
 ----
 1. The Bootstrapper was introduced in FakeItEasy 1.18.0. If you have need of its functionality and are using an older version of FakeItEasy, [upgrade now](https://nuget.org/packages/FakeItEasy/).
+2. Before FakeItEasy 1.19.0, the default startup behavior was to scan all assemblies in the current working directory.
