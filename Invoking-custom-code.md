@@ -13,7 +13,7 @@ There are also more advanced variants that can invoke actions based on arguments
 ```csharp
 // Pass up to 4 original call argument values into the method that creates the exception.
 // Since FakeItEasy 1.15.0, this works even if NumberOfSweetsSoldOn takes a ref DateTime 
-// an out DateTime.
+// or an out DateTime.
 A.CallTo(()=>fakeShop.NumberOfSweetsSoldOn(A<DateTime>._))
  .Returns(17)
  .Invokes((DateTime when) => System.Console.Out.WriteLine("showing sweet sales for " + when);
