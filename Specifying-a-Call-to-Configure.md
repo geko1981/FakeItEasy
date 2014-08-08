@@ -56,7 +56,7 @@ fakeShop.SellThisCandy(lollipop); // will throw now
 Special syntax is provided to specify `Func`s and `Sub`s in VB, using their respective keywords:
 
 ```vb.net
-A.CallTo(Sub() fakeShop.SellSomething()(
+A.CallTo(Sub() fakeShop.SellSomething())
                        .DoesNothing()
 
 A.CallTo(Func() fakeShop.GetTopSellingCandy())
