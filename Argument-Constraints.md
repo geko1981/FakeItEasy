@@ -63,3 +63,25 @@ A<string>.That.Matches(s => s.Length == 3 && s[1] == 'X');
 FakeItEasy will evaluate the predicate against any supplied argument. The predicate can be supplied as an `Expression<Func<T, bool>>` or as a `Func<T, bool>`. FakeItEasy can generate a description of the matcher when an `Expression` is supplied (although you may supply your own as well), but you must supply a description when using a `Func`.
 
 For another example of using `That.Matches`, see Jonathan Channon's [Comparing object instances with FakeItEasy](http://blog.jonathanchannon.com/2013/09/11/comparing-object-instances-with-fakeiteasy).
+
+# Out parameters
+
+The incoming argument value of out parameters is ignored when matching calls. The incoming value of an out parameter can't be seen by the method body anyhow, so there's no value in constraining by it.<sup>1</sup>
+
+For example, this test passes:
+
+```csharp
+string configurationValue = "lollipop";
+A.CallTo(()=>aFakeDictionary.TryGetValue(theKey, out configurationValue))
+ .Returns(true); 
+
+string fetchedValue = "licorice";
+var success = aFakeDictionary.TryGetValue(theKey, out fetchedValue);
+
+Assert.That(success, Is.True);
+```
+
+See [[Implicitly Assigning out Parameter Values|Assigning-out-and-ref-parameters#implicitly-assigning-out-parameter-values]] to learn how the initial `configurationValue` is used in this case.
+
+----
+1. This is new behaviour as of 1.23.0. Previously, the argument value would have to be equal to the value supplied in `A.CallTo` in order for the call to match.
