@@ -36,3 +36,23 @@ The `IFakeObjectCall` object provides access to
 * information about the `Method` being called, as a `MethodInfo`,
 * the `Arguments`, accessed by position or name, and
 * the original `FakedObject`
+
+# Implicitly Assigning `out` Parameter Values
+
+Any `Expression`-based `A.CallTo` configuration that's made on a method that has an out parameters will cause the value of the variable used in the `A.CallTo` to be assigned to the out parameter when the method is actually called.<sup>1</sup> For example:
+
+```csharp
+string configurationValue = "lollipop";
+A.CallTo(()=>aFakeDictionary.TryGetValue(theKey, out configurationValue))
+ .Returns(true); 
+
+string fetchedValue;
+aFakeDictionary.TryGetValue(theKey, out fetchedValue);
+
+// fetchedValue is now "lollipop";
+```
+
+If this behaviour is not desired, `AssignsOutAndRefParameters` (or `…Lazily`) can be used to provide different behaviour.
+
+----
+1. This is new in FakeItEasy 1.23.0.
