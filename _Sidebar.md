@@ -13,6 +13,7 @@
     * [[Read/Write Property Behaviour]]
     * [[Assigning out and ref parameters]]
     * [[Invoking Custom Code]]
+    * [[Calling base methods]]
     * [[Limited Call Specifications]]
 * [[Argument constraints]]
 * [[Assertion]]
