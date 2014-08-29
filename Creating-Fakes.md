@@ -12,7 +12,8 @@ When creating fakes you can, through a fluent interface, specify options for how
 * Specify arguments for the constructor of the faked type.
 * Specify additional interfaces that the fake should implement.
 * Assign additional custom attributes to the faked class.
-* Causing a fake to have [[strict mocking semantics|Strict Fakes]].
+* Cause a fake to have [[strict mocking semantics|Strict Fakes]].
+* Configure all of a fake's methods to [[use their original implementation|Calling base methods]].
 * Create a fake that wraps another object.
   * Specify a recorder for wrapping fakes.
 
