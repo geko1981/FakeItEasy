@@ -19,7 +19,7 @@ A.CallTo(() => foo.Bar("hello", 17).MustHaveHappened();
 
 Then FakeItEasy will look _only_ for calls made with the arguments `"hello"` and `17` - no other calls will match the rule.
 
-When checking for argument equality, FakeItEasy uses `object.Equals`. If the type to be checked does not provide an adequate `Equals` method, you may have to use the `That.Matches` method described in [Custom Matching](Argument Constraints#custom-matching).
+When checking for argument equality, FakeItEasy uses `object.Equals`. If the type to be checked does not provide an adequate `Equals` method, you may have to use the `That.Matches` method described in [Custom Matching](Argument Constraints#custom-matching). Be particularly careful of types whose `Equals` methods perform reference equality rather than value equality. In that case, the objects have to be _the same object_ in order to match, and this sometimes produces unexpected results. When in doubt, verify the type's `Equals` behaviour manually.
 
 ## Ignoring arguments
 Suppose the value of the integer in the `Bar` call wasn't important, but the string was. Then the following constraint could be used:
