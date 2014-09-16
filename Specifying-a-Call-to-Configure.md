@@ -31,7 +31,8 @@ A.CallTo(fakeShop).Where(call => call.Arguments.Count > 4)
 
 `A.CallTo(object)` can also be used to specify property `set`s and `protected` members:
 ```csharp
-A.Callto(fakeShop).Where(call => call.Method.Name == "ProtectedCalculateSalesForToday")
+A.CallTo(fakeShop).Where(call => call.Method.Name == "ProtectedCalculateSalesForToday")
+                  .WithReturnType<double>()
                   .Returns(4741.71);
 
 // refers to the Address property's setter
