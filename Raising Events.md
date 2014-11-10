@@ -20,13 +20,13 @@ robot.FellInLove += (s, e) =>
     };
          
 // Raise the event!
-robot.FellInLove += Raise.With(EventArgs.Empty).Now;
+robot.FellInLove += Raise.With(EventArgs.Empty);
 
 // Use the overload for empty event args
-robot.FellInLove += Raise.WithEmpty().Now;
+robot.FellInLove += Raise.WithEmpty();
 
-// Specify sender explicitly:
-robot.FellInLove += Raise.With(sender: robot, e: EventArgs.Empty).Now;
+// Specify sender and event args explicitly:
+robot.FellInLove += Raise.With(sender: robot, e: EventArgs.Empty);
 ```
 
 Just as when we're trying to [[override a method's behavior|https://github.com/FakeItEasy/FakeItEasy/wiki/What-can-be-faked#what-members-can-be-overriden]], _for FakeItEasy to raise an event, the event must be virtual (if defined on a class) or defined on an interface_.
@@ -34,8 +34,5 @@ Just as when we're trying to [[override a method's behavior|https://github.com/F
 ## VB.Net
 
 ```vb.net
-AddHandler robot.FellInLove, AddressOf Raise.With(EventArgs.Empty).Now
-
-'If the event is an EventHandler(Of T) you can use the shorter syntax:
-AddHandler robot.FellInLove, Raise.With(EventArgs.Empty).Go
+AddHandler robot.FellInLove, AddressOf Raise.With(EventArgs.Empty)
 ```
