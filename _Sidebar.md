@@ -24,6 +24,7 @@
 * [[Dummies]]
 * [[Formatting Argument Values]]
 * [[Scanning for Extension Points]]
+* [[Snippets for FakeItEasy in SideWaffle]]
 * [[Bootstrapper]]
 * [[Platform support]]
 * Troubleshooting
