@@ -24,8 +24,8 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Dummies]]
 * [[Formatting Argument Values]]
 * [[Scanning for Extension Points]]
-* [[Snippets for FakeItEasy in SideWaffle]]
 * [[Bootstrapper]]
+* [[Snippets for FakeItEasy in SideWaffle]]
 * [[Platform support]]
 * Troubleshooting
     * [[Slow startup time]]
