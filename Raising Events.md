@@ -29,6 +29,14 @@ robot.FellInLove += Raise.WithEmpty();
 robot.FellInLove += Raise.With(sender: robot, e: EventArgs.Empty);
 ```
 
+Events of type `EventHandler<TEventArgs>` may be raised in exactly the same way. 
+
+If an event is defined using a custom delegate, such as `delegate void CustomEventHandler(object sender, FileSystemEventArgs eventArgs)`, it needs to be raised using `Now`:
+
+```csharp
+robot.FoundANewFile += Raise.With(robot, new FileSystemEventArgs(…)).Now;
+```
+
 Just as when we're trying to [[override a method's behavior|https://github.com/FakeItEasy/FakeItEasy/wiki/What-can-be-faked#what-members-can-be-overriden]], _for FakeItEasy to raise an event, the event must be virtual (if defined on a class) or defined on an interface_.
 
 ## VB.Net
