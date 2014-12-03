@@ -21,6 +21,6 @@ Once a fake has been constructed, its methods and properties can be overridden i
 
 * virtual,
 * abstract, or
-* defined on an interface
+* an interface method when an interface is being faked
 
 Note that this means that static members, including extension methods, **cannot** be overridden.
