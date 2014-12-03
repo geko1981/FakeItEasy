@@ -16,7 +16,7 @@ Note that special steps will need to be taken to [[fake internal interfaces and 
 * they can be supplied via `WithArgumentsForConstructor` as shown in [[Creating Fakes]], or
 * FakeItEasy will use [[Dummies]] as arguments
 
-## What members can be overriden?
+## What members can be overridden?
 Once a fake has been constructed, its methods and properties can be overridden if they are:
 
 * virtual,
