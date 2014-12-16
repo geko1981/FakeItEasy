@@ -77,7 +77,7 @@ When an argument value needs to be formatted, FakeItEasy examines all known form
 - 2 if `ForType == ArgType.BaseType`, 
 - 3 if `ForType == ArgType.BaseType.BaseType`, and so on, adding one for every step in the inheritance chain
 
-The the formatter whose ForType has the smallest distance to ArgType is used to format the argument.
+The formatter whose ForType has the smallest distance to ArgType is used to format the argument.
 
 ### Highest priority
 Sometimes more than one formatter is found the same distance from ArgType. Maybe two formatters actually specify the same `ForType` property value, or there's a formatter defined for ArgType as well as for an interface that ArgType implements.
