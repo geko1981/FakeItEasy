@@ -4,7 +4,7 @@ Issues will be labelled by the FakeItEasy owners after they are raised. The labe
 
 These are descriptive labels which help to manage the list of issues. If you feel an issue is incorrectly labelled please bring this to the attention of the owners by adding a comment to the issue.
 
-* **breaking** - a breaking change which requires a major version bump
+* **breaking** - a breaking change which requires a major version bump. The classification of a change as breaking is subjective, see the [.NET Core wiki](https://github.com/dotnet/corefx/wiki/Breaking-Changes) for some useful guidelines on this.
 * **bug** - a fault in the implementation of a current feature
 * **build** - an issue related to the building of FakeItEasy packages from source code
 * **contribution** - the implementation of the issue includes a contribution from a contributor (non-FakeItEasy organisation member).
