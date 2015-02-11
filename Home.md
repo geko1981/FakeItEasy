@@ -1,6 +1,7 @@
 There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to ask questions about FakeItEasy and its usage
 
 * [[Quickstart]]
+* [[Changes in version 2.0]]
 * [[Creating fakes]]
     * [[What can be faked]]
     * [[Default fake behavior]]
