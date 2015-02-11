@@ -1,4 +1,6 @@
-Version 2.0 includes a number of breaking changes relative the 1.x versions. Here are some highlights. Until 2.0 is released, everything here is subject to change. The rest of the documentation has not been updated and reflects the latest 1.x release.
+Version 2.0 will include a number of breaking changes relative the 1.x versions, as well as some bug fixes and new functionality. Here are some highlights.
+
+Until 2.0 is released, everything here is subject to change. The rest of the documentation has not been updated and reflects the latest 1.x release.
 
 Note that all fixed and planned issues in 2.0 can be found on the [2.0.0 milestone](https://github.com/FakeItEasy/FakeItEasy/issues?q=milestone%3A2.0.0). Pre-release packages are available on [NuGet](https://www.nuget.org/packages/FakeItEasy).
 
