@@ -5,11 +5,32 @@ Until 2.0 is released, everything here is subject to change. The rest of the doc
 Note that all fixed and planned issues in 2.0 can be found on the [2.0.0 milestone](https://github.com/FakeItEasy/FakeItEasy/issues?q=milestone%3A2.0.0). Pre-release packages are available on [NuGet](https://www.nuget.org/packages/FakeItEasy).
 
 ### Changed
-* Raising custom event handler events now require a typeparam. ([#30](https://github.com/FakeItEasy/FakeItEasy/issues/30))
+* Raising custom event handler events now require a typeparam (but neither `Now` nor `Go`). ([#30](https://github.com/FakeItEasy/FakeItEasy/issues/30)) For example:
+
+  ```C#
+  public delegate void CustomEventHandler(object sender, CustomEventArgs e);
+  …
+  event CustomEventHandler CustomEvent;
+  …
+  fake.CustomEvent += Raise.With<CustomEventHandler>(fake, sampleCustomEventArgs);
+  ```
+
+  To avoid this, make `CustomEvent` an `EventHandler<CustomEventArgs>`.
 * Passing a null sender to `Raise.With` now raises an event with a null sender. Use `Raise.With(TEventArgs)` to raise with the Fake as the sender. ([#395](https://github.com/FakeItEasy/FakeItEasy/issues/395))
-* `IDummyDefinition` and `DummyDefinition<T>` have been renamed to `IDummyFactory` and `DummyFactory<T>`. The names of methods on the interface have also changed. ([#440](https://github.com/FakeItEasy/FakeItEasy/issues/440))
-* `IDummyFactory` is more flexible, and can create more Dummy types from a single factory type. ([#402](https://github.com/FakeItEasy/FakeItEasy/issues/402))
-* `IFakeConfigurator` is more flexible, and can configure more Fake types from a single factory type. ([#402](https://github.com/FakeItEasy/FakeItEasy/issues/402))
+* `IDummyDefinition` and `DummyDefinition<T>` have been renamed to `IDummyFactory` and `DummyFactory<T>`. The factories are now more powerful, able to create more Dummy types from a single factory type, as the interface has changed ([#402](https://github.com/FakeItEasy/FakeItEasy/issues/402), [#441](https://github.com/FakeItEasy/FakeItEasy/issues/441)):
+
+  ```c#
+  bool CanCreate(Type);
+  object Create(Type);
+  int Priority {get}; 
+  ```
+* `IFakeConfigurator` is more flexible, and can configure more Fake types from a single factory type. The interface has changed as well ([#402](https://github.com/FakeItEasy/FakeItEasy/issues/402)):
+
+  ```c#
+  int Priority { get; }
+  bool CanConfigureFakeOfType(Type type);
+  void ConfigureFake(object fakeObject);
+  ```   
 * Moved `ArgumentCollection`, `IRepeatSpecification`, `Raise` to `FakeItEasy.Configuration` namespace. There should be no need to access these except as return values from API methods. ([#432](https://github.com/FakeItEasy/FakeItEasy/issues/432))
 
 ### Removed from public API
