@@ -32,7 +32,7 @@ Note that all fixed and planned issues in 2.0 can be found on the [2.0.0 milesto
   void ConfigureFake(object fakeObject);
   ```   
 
-* Fakes' methods act the same during fake creation as after. They return the same results, calls them show up in `MustHaveHappened`, and they are subject to configuration during fake construction via [[fake creation options|Creating-Fakes#options]] or user-supplied fake configurators implementing `IFakeConfigurator`. ([#371](https://github.com/FakeItEasy/FakeItEasy/issues/371))
+* Fakes' methods act the same during fake creation as after. They return the same results, calls to them show up in `MustHaveHappened`, and they are subject to configuration during fake construction via [[fake creation options|Creating-Fakes#options]] or user-supplied fake configurators implementing `IFakeConfigurator`. ([#371](https://github.com/FakeItEasy/FakeItEasy/issues/371))
 
 * Fake creation option `OnFakeCreated` has been renamed to `ConfigureFake` to reflect that its effects are active during fake creation ([#454](https://github.com/FakeItEasy/FakeItEasy/issues/454))
 
