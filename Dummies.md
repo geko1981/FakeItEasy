@@ -36,6 +36,7 @@ When FakeItEasy needs to access a Dummy of type `T`, it tries a number of approa
 1. see if there's a custom Dummy definition for `T` (more on this below)
 1. if `T` is `Task`, the returned Dummy will be an actual `Task` that completes immediately<sup>1</sup>
 1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` that completes immediately<sup>1</sup>. Its `Result` property returns a Dummy
+1. starting in version 2.0, if `T` is a `Lazy<TValue>`, the returned Dummy will be an actual `Task<TValue>` whose `Value` is a Dummy of type `TValue`
 1. if `T` is [[fakeable|What can be faked]], the Dummy will be a Fake `T`
 1. if `T` is a value type, the Dummy will be a `T` created via `Activator.CreateInstance`
 1. if nothing above matched, then `T` is a class. Loop over all its constructors in _descending order of argument list length_.  
