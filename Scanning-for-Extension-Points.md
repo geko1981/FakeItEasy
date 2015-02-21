@@ -2,7 +2,7 @@ On initialization, essentially as soon as a FakeItEasy type is accessed, FakeItE
 
 There are currently three kinds of extension points defined:
 
-* [[Dummy Definitions|Dummies]],
+* [[Dummy Definitions (Dummy Factories in 2.x)|Dummies]],
 * [[Argument Value Formatters|Formatting Argument Values]] and
 * Fake Configurators
 
