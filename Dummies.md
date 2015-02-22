@@ -33,10 +33,10 @@ When [[Creating Fakes]] or Dummies of class types, FakeItEasy needs to invoke th
 
 When FakeItEasy needs to access a Dummy of type `T`, it tries a number of approaches in turn, until one succeeds:
 
-1. see if there's a user-supplied [[custom Dummy creation]] mechanism for `T` (more on this below)
+1. see if there's a user-supplied [[custom Dummy creation]] mechanism for `T`
 1. if `T` is `Task`, the returned Dummy will be an actual `Task` that completes immediately<sup>1</sup>
 1. if `T` is `Task<TResult>`, the returned Dummy will be an actual `Task<TResult>` that completes immediately<sup>1</sup>. Its `Result` property returns a Dummy
-1. starting in version 2.0, if `T` is a `Lazy<TValue>`, the returned Dummy will be an actual `Task<TValue>` whose `Value` is a Dummy of type `TValue`
+1. if `T` is a `Lazy<TValue>`, the returned Dummy will be an actual `Lazy<TValue>` whose `Value` is a Dummy of type `TValue`<sup>2</sup>
 1. if `T` is [[fakeable|What can be faked]], the Dummy will be a Fake `T`
 1. if `T` is a value type, the Dummy will be a `T` created via `Activator.CreateInstance`
 1. if nothing above matched, then `T` is a class. Loop over all its constructors in _descending order of argument list length_.  
@@ -46,3 +46,4 @@ If none of these strategies yield a viable Dummy, then FakeItEasy can't make a D
 
 ----
 1. In FakeItEasy 1.12 or earlier, the `Task` returned from a non-configured fake method would never be completed and (for example) an `await` would never be satisfied. If you are using 1.12 or earlier, [upgrade now](https://nuget.org/packages/FakeItEasy/).
+1. In FakeItEasy 1.x , the `Lazy` would not behave well if `TValue` did not have a parameterless constructor. If you are using 1.x or earlier, [consider upgrading now](https://nuget.org/packages/FakeItEasy/).
