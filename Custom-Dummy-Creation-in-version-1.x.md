@@ -1,4 +1,4 @@
-[[version 2.x|Custom Dummy Creation]] | version 1.x
+**Version 1.x** | [[Version 2.x|Custom Dummy Creation]]
 
 ----
 
