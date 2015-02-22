@@ -1,4 +1,4 @@
-FakeItEasy has built-in [[Dummy]] creation rules that provide usable non-null values to be used in tests. However, if test-writers require specific types of values to be made, they can provide custom rules for FakeItEasy to use.
+FakeItEasy has built-in [[Dummy|Dummies]] creation rules that provide usable non-null values to be used in tests. However, if test-writers require specific types of values to be made, they can provide custom rules for FakeItEasy to use.
 
 ## Custom Dummy creation in FakeItEasy 2.x
 
