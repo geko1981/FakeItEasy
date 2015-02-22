@@ -1,12 +1,6 @@
-**Version 1.x** | [[Version 2.x|Custom Dummy Creation]]
+[[Version 2.x|Custom Dummy Creation]] | **Version 1.x**
 
-----
-
-FakeItEasy has built-in [[Dummy|Dummies]] creation rules that provide usable non-null values to be used in tests. However, if test-writers require specific types of values to be made, they can provide custom rules for FakeItEasy to use.
-
-## Custom Dummy creation
-
-If FakeItEasy's default dummy creation behavior isn't adequate, you can provide your own. Here's an example:
+FakeItEasy has built-in [[Dummy|Dummies]] creation rules that provide usable non-null values to be used in tests. However, if the default dummy creation behavior isn't adequate, you can provide your own. Here's an example:
 
 ```csharp
 class DummyBookDefinition : DummyDefinition<Book>
