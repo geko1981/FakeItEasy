@@ -23,6 +23,7 @@ There's a room on Jabbr at https://jabbr.net/#/rooms/fakeiteasy. Feel free to as
 * [[Raising events]]
 * [[Strict fakes]]
 * [[Dummies]]
+    * [[Custom Dummy Creation]]
 * [[Formatting Argument Values]]
 * [[Scanning for Extension Points]]
 * [[Bootstrapper]]
