@@ -23,6 +23,7 @@
 * [[Raising events]]
 * [[Strict fakes]]
 * [[Dummies]]
+    * [[Custom Dummy Creation]]
 * [[Formatting Argument Values]]
 * [[Scanning for Extension Points]]
 * [[Bootstrapper]]
