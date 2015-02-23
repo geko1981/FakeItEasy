@@ -4,7 +4,7 @@ The common way to create a fake object is by using the A.Fake-syntax, for exampl
 ```csharp
 var foo = A.Fake<IFoo>();
 ```
-This will return a faked object that is an actual instance of the type specified (IFoo in this case).
+This will return a faked object that is an actual instance of the type specified (`IFoo` in this case).
 
 ##Options
 When creating fakes you can, through a fluent interface, specify options for how the fake should be created.
@@ -20,28 +20,28 @@ When creating fakes you can, through a fluent interface, specify options for how
 Examples:
 
 ```csharp
-// Specifying arguments for constructor using IEnumerable<object>.
-var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(new object[] { "foo", "bar" }));
-
 // Specifying arguments for constructor using expression. This is refactoring friendly!
 // The constructor seen here is never actually invoked. It is an expression and it's purpose
 // is purely to communicate the constructor arguments which will be extracted from it
 var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(() => new FooClass("foo", "bar")));
 
+// Specifying arguments for constructor using IEnumerable<object>.
+var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(new object[] { "foo", "bar" }));
+
 // Specifying additional interfaces to be implemented. Among other uses,
 // this can help when a fake skips members because they have been 
-// explicitly implements on the class being faked.
+// explicitly implemented on the class being faked.
 var foo = A.Fake<FooClass>(x => x.Implements(typeof(IFoo));
 
 // Assigning custom attributes to the faked class.
-// Get parameters constructor for our attribute and create a builder 
+// Get parameterless constructor for our attribute and create a builder 
 var constructor = typeof(FooAttribute).GetConstructor(new Type[0]);
 var builder = new CustomAttributeBuilder(constructor, new object[0]);
 var builders = new List<CustomAttributeBuilder>() { test };
 // foo and foo's type should both have "FooAttribute"
 var foo = A.Fake<IFoo>(x => x.WithAdditionalAttributes(builders));
 
-// Create wrapper
+// Create wrapper - unconfigured calls will be forwarded to wrapped
 var wrapped = new FooClass("foo", "bar");
 var foo = A.Fake<IFoo>(x => x.Wrapping(wrapped));
 ```
