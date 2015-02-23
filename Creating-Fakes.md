@@ -1,5 +1,5 @@
 ##Natural fakes
-The common way to create a fake object is by using the A.Fake-syntax, for example:
+The common way to create a fake object is by using the `A.Fake` syntax, for example:
 
 ```csharp
 var foo = A.Fake<IFoo>();
