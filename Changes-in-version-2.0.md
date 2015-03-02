@@ -47,7 +47,7 @@ Note that all fixed and planned issues in 2.0 can be found on the [2.0.0 milesto
 
 ### Fixed
 * Improved exception thrown when fake's base's constructor fails. ([#367](https://github.com/FakeItEasy/FakeItEasy/issues/367))
-
+* Returning the same object on subsequent auto-property `get`s even when the property type is not fakeable - ([#312](https://github.com/FakeItEasy/FakeItEasy/issues/312))
 ### New
 * Can now raise events of arbitrary delegate type. ([#30](https://github.com/FakeItEasy/FakeItEasy/issues/30))
 * Dummy `Lazy<T>` values now default to having a value (which is a Dummy of type `T`). ([#358](https://github.com/FakeItEasy/FakeItEasy/issues/358))
