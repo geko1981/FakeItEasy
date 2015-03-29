@@ -52,3 +52,4 @@ Note that all fixed and planned issues in 2.0 can be found on the [2.0.0 milesto
 ### New
 * Can now raise events of arbitrary delegate type. ([#30](https://github.com/FakeItEasy/FakeItEasy/issues/30))
 * Dummy `Lazy<T>` values now default to having a value (which is a Dummy of type `T`). ([#358](https://github.com/FakeItEasy/FakeItEasy/issues/358))
+* `Implements` now has a generic overload: `Implements<IAmAnInterface>()`. ([#470](https://github.com/FakeItEasy/FakeItEasy/issues/470))
