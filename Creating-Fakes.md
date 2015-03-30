@@ -32,6 +32,8 @@ var foo = A.Fake<FooClass>(x => x.WithArgumentsForConstructor(new object[] { "fo
 // this can help when a fake skips members because they have been 
 // explicitly implemented on the class being faked.
 var foo = A.Fake<FooClass>(x => x.Implements(typeof(IFoo));
+// also, starting in FakeItEasy 2.0:
+var foo = A.Fake<FooClass>(x => x.Implements<IFoo>());
 
 // Assigning custom attributes to the faked class.
 // Get parameterless constructor for our attribute and create a builder 
